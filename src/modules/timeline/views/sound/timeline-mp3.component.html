@@ -1,0 +1,42 @@
+<div class="timeline-video">
+
+      <kendo-tabstrip [ngStyle]="{'width': '400px'}">
+          <kendo-tabstrip-tab
+            *ngFor="let url of urlList; let i = index;" 
+            [title]="url.filename"
+            [selected]="i == 0"
+            (select)="YinPinTab(i+1)"
+          >
+              <ng-template kendoTabContent>
+                  <!-- <div class="yinpin" *ngIf="i==0">
+                      <audio id="yinpin{{i+1}}" src="{{url.fileurl}}/{{url.filename}}.{{url.extension}}" autoplay="autoplay" controls="controls">
+                        Your browser does not support the audio element.
+                      </audio>
+                    </div> -->
+                    <div class="yinpin">
+                      <audio id="yinpin{{i+1}}" src="{{url.fileurl}}/{{url.filename}}.{{url.extension}}" autoplay="autoplay" controls="controls">
+                        Your browser does not support the audio element.
+                      </audio>
+                    </div>
+              </ng-template>
+          </kendo-tabstrip-tab>
+        </kendo-tabstrip>
+	
+  <!-- <tabset class="tabset_container" type="pills">
+    <tab *ngFor="let url of urlList; let i = index;" (select)="YinPinTab(i+1)">
+      <ng-template tabHeading>
+        <div class="tab">{{url.filename}}</div>
+      </ng-template>
+      <div class="yinpin" *ngIf="i==0">
+        <audio id="yinpin{{i+1}}" src="{{url.fileurl}}/{{url.filename}}.{{url.extension}}" autoplay="autoplay" controls="controls">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div class="yinpin" *ngIf="i!=0">
+        <audio id="yinpin{{i+1}}" src="{{url.fileurl}}/{{url.filename}}.{{url.extension}}" preload="auto" controls="controls">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </tab>
+  </tabset> -->
+</div>

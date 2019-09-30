@@ -1,0 +1,18 @@
+<div class="timeline-fujian">
+	<div class="main">
+		<table>
+			<tr class="table-header">
+				<th class="line1">文件名</th>
+				<th class="line2">文件类型</th>
+				<th class="line3">操作</th>
+			</tr>
+			<tr class="table-main" *ngFor="let url of urlList;let i = index;">
+				<td class="line1">{{url.filename}}</td>
+				<td class="line2">.{{url.extension}}文件</td>
+				<td class="line3">
+					<a href="{{url.fileurl}}/{{url.filename}}.{{url.extension}}">打开</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

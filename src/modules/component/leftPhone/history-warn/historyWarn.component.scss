@@ -1,0 +1,80 @@
+.history-warn{
+    height: 340px;
+    overflow-y: auto;
+    li{
+        height: 80px;
+        padding-left: 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:after{
+            content: '';
+            width: 380px;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0,0,0,.2), rgba(0,0,0,.1));
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        &.active, &:hover{
+            background-image: linear-gradient(90deg, rgba(155,180,215,0.20) 0%, rgba(142,173,214,0.00) 100%);
+        }
+        &:hover{
+            .icon-link2{
+                display: inline-block;
+            }
+        }
+        >span{
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 32px;
+            font-size: 22px;
+            color: #fff;
+            float: left;
+            margin-right: 16px;
+            &.green{
+                background-image: linear-gradient(-131deg, #27BB52 6%, #2AD15B 93%);
+            }
+            &.blue{
+                background-image: linear-gradient(-136deg, #4180FD 0%, #2493FF 100%);
+            }
+            &.orange{
+                background-image: linear-gradient(45deg, #FFB704 0%, #F7851C 100%);
+            }
+        }
+    }
+    .history-warn-content{
+        width: 314px;
+        float: left;
+        div{
+            width: 314px;
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+        p{
+            font-size: 14px;
+            color: rgba(255,255,255,.6);
+            margin-bottom: 0;
+        }
+    }
+    .icon-link2{
+        width: 36px;
+        height: 28px;
+        display: inline-block;
+        background: rgba(255,255,255,0.10);
+        border-radius: 4px;
+        font-size: 22px;
+        text-align: center;
+        line-height: 28px;
+        color: #fff;
+        font-style: normal;
+        position: absolute;
+        top: 26px;
+        right: 21px;
+        cursor: pointer;
+        display: none;
+    }
+}

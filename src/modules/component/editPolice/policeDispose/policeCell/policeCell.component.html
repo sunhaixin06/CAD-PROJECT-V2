@@ -1,0 +1,46 @@
+<div class="police-cell">
+    <div class="police-dispose-center-top">
+        <div class="top-title">待选单元</div>
+        <div class="top-input">
+            <span class="icon-search-1 search-btn"></span>
+            <input type="text" placeholder="请输入拼音筛选…">
+        </div>
+        <div class="top-combobox">
+            <kendo-dropdownlist
+            [data]="listItems"
+            [textField]="'text'"
+            [valueField]="'value'"
+            [value]="selectedValue"
+            >
+            </kendo-dropdownlist>
+        </div>
+        <div class="top-combobox">
+            <kendo-dropdownlist
+            [data]="listItems"
+            [textField]="'text'"
+            [valueField]="'value'"
+            [value]="selectedValue"
+            >
+            </kendo-dropdownlist>
+        </div>
+    </div>
+    <div class="police-dispose-center-content scrollbar">
+        <div
+        [class.green]="item.level === 1"
+        [class.red]="item.level === 2"
+        [class.active]="item.isSelect"
+        *ngFor="let item of cellDatas;let i = index">
+            <h5>处置单元1</h5>
+            <p>徐汇分局</p>
+            <span class="radio-cirl icon-right22" (click)="selectCell(false, i)"></span>
+            <span class="radio-cirl icon-select-circle" (click)="selectCell(true, i)"></span>
+        </div>
+        <!-- 模板 -->
+        <!-- <div class="green">
+            <h5>处置单元1</h5>
+            <p>徐汇分局</p>
+            <span class="radio-cirl icon-right22"></span>
+            <span class="radio-cirl icon-select-circle"></span>
+        </div> -->
+    </div>
+</div>

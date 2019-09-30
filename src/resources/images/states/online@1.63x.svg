@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/states/online@1.63x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/states/online" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(1.000000, 1.000000)">
+            <circle id="Oval-Copy-3" stroke="#FFFFFF" stroke-width="1.5" fill="#31E0BC" cx="5" cy="5" r="5.25"></circle>
+            <path d="M2.55698052,5.55698052 L2.55698052,3.30698052 C2.55698052,2.89276695 2.89276695,2.55698052 3.30698052,2.55698052 C3.72119408,2.55698052 4.05698052,2.89276695 4.05698052,3.30698052 L4.05698052,4.80698052 L7.05698052,4.80698052 C7.47119408,4.80698052 7.80698052,5.14276695 7.80698052,5.55698052 C7.80698052,5.97119408 7.47119408,6.30698052 7.05698052,6.30698052 L3.30698052,6.30698052 C2.89276695,6.30698052 2.55698052,5.97119408 2.55698052,5.55698052 Z" id="Combined-Shape" fill="#FFFFFF" transform="translate(5.181981, 4.431981) rotate(-45.000000) translate(-5.181981, -4.431981) "></path>
+        </g>
+    </g>
+</svg>

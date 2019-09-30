@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="101px" height="27px" viewBox="0 0 101 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="79.8177083%" id="linearGradient-1">
+            <stop stop-color="#1D6AFF" offset="0%"></stop>
+            <stop stop-color="#1186FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="第二版" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon id="Rectangle-Copy-2" fill="url(#linearGradient-1)" fill-rule="nonzero" transform="translate(50.135732, 13.500000) scale(-1, 1) translate(-50.135732, -13.500000) " points="0 2.54983534e-13 96 0 96 8 100.271464 13.47 96 19 96 27 0 27"></polygon>
+    </g>
+</svg>

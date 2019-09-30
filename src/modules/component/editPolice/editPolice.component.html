@@ -1,0 +1,276 @@
+<div class="edit-police-page">
+    <div class="edit-content-top">
+        <div class="edit-content-tabs">
+            <div class="tabs-tips">
+                <div [ngClass]="{ 'active': selectIndex === 0 }" (click)="switchSelect(0)">
+                    <span class="icon-alarm-zidingyi"></span>匪警
+                </div>
+                <div [ngClass]="{ 'active': selectIndex === 1 }" (click)="switchSelect(1)">
+                    <span class="icon-traffic-zidingyi"></span>交通事故
+                </div>
+                <div [ngClass]="{ 'active': selectIndex === 2 }" (click)="switchSelect(2)">
+                    <span class="icon-fire2-zidingyi"></span>火警
+                </div>
+                <div [ngClass]="{ 'active': selectIndex === 3 }" (click)="switchSelect(3)">
+                    <span class="icon-treatment-zidingyi"></span>医疗警
+                </div>
+            </div>
+            <span class="tabs-time">接警时长：01'20''</span>
+            <div class="tabs-right">
+                <div class="txt">无声</div>
+                <div class="txt">咨询</div>
+                <div class="txt">骚扰</div>
+                <div class="txt">测试</div>
+                <div class="attachment">
+                    <!-- <span class="icon-attachment"></span> -->
+                    <img src="../../../resources/images/attachment.svg" alt="" class="tabs-img1">
+                    <img src="../../../resources/images/attachment-hover.svg" alt="" class="tabs-img2">
+                </div>
+                <div class="tape2">
+                    <!-- <span class="icon-tape2"></span> -->
+                    <img src="../../../resources/images/tape.svg" alt="" class="tabs-img1">
+                    <img src="../../../resources/images/tape-hover.svg" alt="" class="tabs-img2">
+                </div>
+                <div class="help">
+                    <!-- <span class="icon-infor"></span> -->
+                    <img src="../../../resources/images/help2.svg" alt="" class="tabs-img1">
+                    <img src="../../../resources/images/help.svg" alt="" class="tabs-img2">
+                </div>
+            </div>
+        </div>
+        <div class="edit-content-top-box">
+            <div class="title-comp">
+                <span class="icon-user"></span>
+                <span class="title">报警人信息</span>
+                <div class="sec-prev" (click)="isSelectSecr = !isSelectSecr">
+                    <span class="{{ isSelectSecr ? 'radio icon-select-circle': 'radio icon-right22'}}"></span>
+                    <span class="txt">隐私保护</span>
+                </div>
+            </div>
+            <div class="helper-info">
+                <div class="fir">
+                    <div class="fir-top">
+                        <p>报警人</p>
+                        <div class="sec-prev" (click)="isSelectSecr = !isSelectSecr">
+                            <span class="{{ isSelectSecr ? 'radio icon-select-circle': 'radio icon-right22'}}"></span>
+                            <span class="txt">受害人</span>
+                        </div>
+                    </div>
+                    <div class="fir-bottom">
+                        <b class="error-tips">此项不能为空!</b>
+                        <input type="text" value="王凯">
+                        <img src="{{ sexSelected === 0 ? '../../../resources/images/men-hover.svg' : '../../../resources/images/men.svg'}}" alt="" (click)="sexSelected = 0">
+                        <img src="{{ sexSelected === 1 ? '../../../resources/images/women-hover.svg' : '../../../resources/images/women.svg'}}" alt="" (click)="sexSelected = 1">
+                    </div>
+                </div>
+                <div class="sec">
+                    <p>身份证号</p>
+                    <div>
+                        <b class="error-tips">此项不能为空!</b>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="sec">
+                    <p>报警电话<img src="../../../resources/images/right-input-text.png" alt=""></p>
+                    <div>
+                        <b class="error-tips" *ngIf="!helperNumber.isTrue">请正确输入报警电话!</b>
+                        <input type="text" (blur)="testPhone()" [(ngModel)]="helperNumber.value">
+                    </div>
+                </div>
+                <div class="sec">
+                    <p>联系人姓名及电话</p>
+                    <div>
+                        <b class="error-tips">此项不能为空!</b>
+                        <input type="text">
+                        <span class="icon-call"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="title-comp">
+                <span class="icon-file2"></span>
+                <span class="title">事件信息</span>
+            </div>
+            <div class="icident-info">
+                <div class="icident-info-left">
+                    <div class="sec">
+                        <p>事发地址<img src="../../../resources/images/right-input-text.png" alt=""></p>
+                        <div>
+                            <b class="error-tips">此项不能为空!</b>
+                            <input type="text">
+                            <span class="btn-icon k-icon k-i-marker-pin"></span>
+                            <span class="btn-icon icon-office" [ngClass]="{ 'active': showBiaoZhiWu }" (click)="showBiaoZhiWuHandle()"></span>
+                            <div [ngClass]="{ 'show': showBiaoZhiWu }">
+                                <input type="text" placeholder="请输入标志物">
+                                <span class="k-icon k-i-marker-pin"></span>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sec-box">
+                        <div class="sec-item">
+                            <p>所属分局<img src="../../../resources/images/right-input-text.png" alt=""></p>
+                            <div>
+                                <!-- [placeholder]="'所属分局'" -->
+                                <!-- [filterable]="true"
+                                    (filterChange)="filterSuosufenju($event)" -->
+                                <kendo-dropdownlist
+                                    [data]="suosufenjuData"
+                                    [textField]="'text'"
+                                    [valueField]="'value'"
+                                    [value]="suosufenjuValue"
+                                    (valueChange)="onChangeSuosufenju($event)"
+                                    required
+                                >
+                                    <ng-template kendoDropDownListItemTemplate let-dataItem>
+                                        <span style="font-size: 20px;">{{ dataItem.text }}</span>
+                                    </ng-template>
+                                </kendo-dropdownlist>
+                            </div>
+                        </div>
+                        <div class="sec-item">
+                            <p>管辖单位<img src="../../../resources/images/right-input-text.png" alt=""></p>
+                            <div>
+                                <!-- <kendo-dropdownlist
+                                    [data]="guanxiadanweiData"
+                                    [textField]="'text'"
+                                    [valueField]="'value'"
+                                    [value]="guanxiadanweiValue"
+                                >
+                                </kendo-dropdownlist> -->
+                                <input type="text" class="form-control" [(ngModel)]="info.policeOfficeId">
+                                <ds-dropdown [childData]='testData1' [inputData]='info.policeOfficeId' (parentData)='getDominionUnit($event)'></ds-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sec-box">
+                        <div class="sec-item">
+                            <p>来话类别<img src="../../../resources/images/right-input-text.png" alt=""></p>
+                            <div>
+                                <kendo-dropdownlist
+                                    [data]="laihuaType"
+                                    [textField]="'text'"
+                                    [valueField]="'value'"
+                                    [value]="liahuaValue"
+                                    required
+                                >
+                                <ng-template kendoDropDownListItemTemplate let-dataItem>
+                                    <span style="font-size: 20px;">{{ dataItem.text }}</span>
+                                </ng-template>
+                                </kendo-dropdownlist>
+                            </div>
+                        </div>
+                        <div class="sec-item">
+                            <p>警情级别</p>
+                            <div class="{{'police-level active-'+policeLevel}}">
+                                <span></span>
+                                <ul>
+                                    <li [ngClass]="{ 'active': policeLevel === 1 }" (click)="switchPoliceLevel(1)">1级</li>
+                                    <li [ngClass]="{ 'active': policeLevel === 2 }" (click)="switchPoliceLevel(2)">2级</li>
+                                    <li [ngClass]="{ 'active': policeLevel === 3 }" (click)="switchPoliceLevel(3)">3级</li>
+                                    <li [ngClass]="{ 'active': policeLevel === 4 }" (click)="switchPoliceLevel(4)">4级</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sec-box">
+                        <div class="sec-item">
+                            <p>一级案由</p>
+                            <div>
+                                <kendo-dropdownlist
+                                    [data]="anyouFir"
+                                    [textField]="'text'"
+                                    [valueField]="'value'"
+                                    [value]="anyouFirValue"
+                                    (valueChange)="onChangeAnyou($event)"
+                                >
+                                <ng-template kendoDropDownListItemTemplate let-dataItem>
+                                    <span style="font-size: 20px;">{{ dataItem.text }}</span>
+                                </ng-template>
+                                </kendo-dropdownlist>
+                            </div>
+                        </div>
+                        <div class="sec-item">
+                            <p>二级案由</p>
+                            <div>
+                                <!-- <kendo-dropdownlist
+                                    [data]="anyouSec"
+                                    [textField]="'text'"
+                                    [valueField]="'value'"
+                                    [value]="anyouSecValue"
+                                >
+                                <ng-template kendoDropDownListItemTemplate let-dataItem>
+                                    <span style="font-size: 20px;">{{ dataItem.text }}</span>
+                                </ng-template>
+                                </kendo-dropdownlist> -->
+                                <input type="text" class="form-control" [(ngModel)]="info.policeOfficeId">
+                                <ds-dropdown [childData]='testData2' [inputData]='info.policeOfficeId' (parentData)='getDominionUnit($event)'></ds-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="icident-info-right">
+                    <div class="sec">
+                        <p>报警内容
+                            <img src="../../../resources/images/right-input-text.png" alt="">
+                            <span class="icon-file2"></span>
+                        </p>
+                        <b class="error-tips">此项不能为空!</b>
+                        <textarea name="police-content" id=""></textarea>
+                    </div>
+                    <div class="sec">
+                        <p>车牌号</p>
+                        <div class="tag-box scrollbar">
+                            <div class="item-tag" *ngFor="let item of tagsArr;let i = index">
+                                <span class="name">{{item}}</span>
+                                <span class="icon-infor"></span>
+                                <span class="icon-close" (click)="closeTag(i)"></span>
+                            </div>
+                            <div class="add-tag" [ngClass]="{ 'active': isAddTag }">
+                                <span (click)="addTag(true)">新增</span>
+                                <input type="text" autofocus="autofocus" #tagInput
+                                [(ngModel)] = "tagValue"
+                                (keyup.enter)="addTag(false, 0)"
+                                (blur)="addTag(false, 1)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="edit-content-bottom">
+        <div class="edit-content-tabs">
+            <div class="tabs-tips">
+                <div [ngClass]="{ 'active': bottomBtnIndex === 0 }" (click)="switchBottomTab(0)">警情处置</div>
+                <div [ngClass]="{ 'active': bottomBtnIndex === 1 }" (click)="switchBottomTab(1)">关联警情</div>
+                <div [ngClass]="{ 'active': bottomBtnIndex === 2 }" (click)="switchBottomTab(2)">程序化处警</div>
+            </div>
+            <div class="tabs-right">
+                <div>
+                    <span class="icon-search-1"></span>
+                    <input type="text" placeholder="搜索">
+                </div>
+                <span class="icon-tape2-dingyi-reset">
+                    <img src="../../../resources/images/tape.svg" alt="" class="tabs-img1">
+                    <img src="../../../resources/images/tape-hover.svg" alt="" class="tabs-img2">
+                </span>
+            </div>
+        </div>
+        <div class="edit-content-bottom-box">
+            <!-- 警情处置 -->
+            <police-dispose *ngIf="bottomBtnIndex === 0"></police-dispose>
+            <!-- 关联警情 -->
+            <police-related *ngIf="bottomBtnIndex === 1"></police-related>
+            <!-- 程序化处警 -->
+            <police-rule *ngIf="bottomBtnIndex === 2"></police-rule>
+        </div>
+    </div>
+    <div class="submit-tabs">
+        <button class="btn-common">请求接管</button>
+        <div>
+            <button class="btn-common">无需处警</button>
+            <button class="btn-common">警情关闭</button>
+            <button class="btn-common save">保存</button>
+        </div>
+    </div>
+</div>

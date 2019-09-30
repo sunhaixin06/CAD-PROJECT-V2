@@ -1,0 +1,86 @@
+<div class="chat-page">
+    <div class="chat-page-top">
+        <span class="back-btn" (click)="backList()"></span>
+        <div class="info">
+            <img src="../../../resources/images/head/02.svg" alt="">
+            <span>王凯</span>
+        </div>
+        <span class="icon-search-1 search-btn" (click)="showSearchHandle(true)"></span>
+        <!-- 搜索框 -->
+        <div class="top-search-input-box" [class.showbox]="showSearch">
+            <div class="top-search-input">
+                <span class="icon-search-1"></span><input type="text" placeholder="搜索">
+            </div>
+            <i (click)="showSearchHandle(false)">取消</i>
+        </div>
+    </div>
+    <div class="chat-page-content scrollbar">
+        <p class="time">10:53</p>
+        <div class="chat-info"
+        [class.chatleft]="!items.isSelf"
+        [class.chatright]="items.isSelf"
+        *ngFor="let items of chatData;let itemsIndex = index">
+            <img [src]="items.headIcon" alt="">
+            <div class="message">
+                <div *ngFor="let item of items.message;let childIndex = index">
+                    <!-- 文字/电话 -->
+                    <span *ngIf="item.contentType === 0 || item.contentType === 1">{{item.content}}</span>
+                    <!-- 录音 -->
+                    <div *ngIf="item.contentType === 4">
+                        <span>{{item.content}}</span>
+                        <img src="../../../resources/images/icon-voice.svg" alt="" class="audio-img">
+                    </div>
+
+                    <!-- 弹出层部分 -->
+                    <div *ngIf="chatConfig.typeConfig[item.contentType] !== undefind">
+                        <i class="icon-more2" (click)="showMenuHandle(true, itemsIndex, childIndex)"></i>
+                        <div class="menu-list" *ngIf="item.isShowMenu">
+                            <p
+                            *ngFor="let config of chatConfig.typeConfig[item.contentType]"
+                            (click)="showMenuHandle(false, itemsIndex, childIndex, config.name)"
+                            >
+                                {{config.name}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div>
+                    <span>24''</span> <img src="../../../resources/images/icon-voice.svg" alt="" class="audio-img">
+                    <i class="icon-more2"></i>
+                </div> -->
+            </div>
+        </div>
+        <!-- 模板 -->
+        <!-- <p class="time">10:53</p>
+        <div class="chat-info chatleft">
+            <img src="../../../resources/images/head/02.svg" alt="">
+            <div class="message">
+                <div>
+                    这里有人持械斗殴，请立即派人处理。<i class="icon-more2"></i>
+                </div>
+                <div>
+                    <span>24''</span> <img src="../../../resources/images/icon-voice.svg" alt="" class="audio-img">
+                    <i class="icon-more2"></i>
+                </div>
+            </div>
+        </div>
+        <div class="chat-info chatright">
+            <img src="../../../resources/images/head/03.svg" alt="">
+            <div class="message">
+                <div>你好，请问有什么可以帮助到你？<i class="icon-more2"></i></div>
+                <div>13809782763<i class="icon-more2"></i></div>
+            </div>
+        </div> -->
+    </div>
+    <div class="chat-page-bottom">
+        <div class="point">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="input-btn">
+            <input type="text" value="好的">
+            <span class="icon-message"></span>
+        </div>
+    </div>
+</div>

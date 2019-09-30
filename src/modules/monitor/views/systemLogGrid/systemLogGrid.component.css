@@ -1,0 +1,220 @@
+.selectors-mohu{
+	margin-top: 20px;
+	margin-left: 5px;
+	margin-bottom: 20px;
+}
+.sousuokuang{
+	width:calc(100% - 110px);
+	border: solid 2px #00a1fd;
+	border-radius: 5px;
+	float: left;
+}
+.selectors-mohu input{
+	float: left;
+    width: calc(100% - 50px);
+    height: 30px;
+} 
+#sousuo{
+	float: right;
+	width: 50px;
+	height: 30px;
+	border: none;
+	margin-top: 0px;
+	padding: 5px;
+	background: #00a1fd;
+	background-size:60% 60%;
+	cursor: pointer;
+}
+.caozuo{
+	width: 110px; 
+	float: left;
+}
+.selectors-mohu #qingkong{
+	float: left;
+	width: 60px;
+	margin: 0px 0px 0px 5px;
+	padding-top: 7px;
+	height: 34px;
+	border: none;
+	margin-top: 0px;
+	background: #00a1fd;
+	color: white;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.selectors-mohu #shoufang{
+	float: left;
+	width: 34px;
+	margin: 0px 2px 0px 5px;
+	height: 34px;
+	border: none;
+	margin-top: 0px;
+	background: #00a1fd;
+	background-size:80% 100%;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.selectors-mohu #shoufang img{
+	margin-left: 7px;
+	margin-top: 7px;
+}
+.img-down{
+	transform:rotate(180deg);
+}
+.selectors-jingque{
+	
+}
+.selectors-jingque .selector1{
+	float: left;
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-top: 15px;
+	/*margin-right: 37px;*/
+	width: calc(25% - 6px);
+	height: 34px;
+	text-align: center;
+	padding: 7px;
+	cursor: pointer;
+	z-index: 1010;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	border-radius: 5px;
+}
+.normal{
+	background: #00a1fd;
+	color: white;
+}
+.click1{
+	border: 1px solid #00a1fd;
+	border-bottom: 1px solid white;
+	color: #00a1fd;
+	background: white;
+}
+.checked{
+	color: #00a1fd;
+	background: white;
+	border: 1px solid #00a1fd;
+}
+.selector-main{
+	position: absolute;
+	background: white;
+	margin-top: 82px;
+	/*right: 30px;
+	top: 126px;*/
+	width: calc(75% - 40px);
+	height: 300px;
+	z-index: 1000;
+	border: solid 1px #00a1fd;
+	min-width: 330px;
+}
+.selector-detail{
+	height: 260px;
+	padding-bottom: 20px;
+	overflow: scroll;
+    overflow-x:hidden;
+	overflow-y:auto;
+}
+.selector-detail::-webkit-scrollbar-track{
+   
+}/* 滚动条的滑轨背景颜色 */
+
+.selector-detail::-webkit-scrollbar{
+	z-index: 999999;
+	border-radius:12px;
+	filter:alpha(opacity=50); /*IE滤镜，透明度50%*/
+	-moz-opacity:0.5; /*Firefox私有，透明度50%*/
+	opacity:0.5;/*其他，透明度50%*/
+	width: 5px;
+} 
+.selector-detail::-webkit-scrollbar-thumb{
+	border-radius:30px;
+	background-color:#eaf8ff
+}/* 滑块颜色 */
+
+.selector-footer{
+	height: 40px;
+	border-top: solid 1px #00a1fd ;
+}
+.chongzhi{
+	padding-top: 5px;
+	height: 38px;
+	float: left;
+	width: 49.99%;
+	border-right: solid 1px #00a1fd;
+	cursor: pointer;
+	text-align: center;
+	font-size: 20px;
+}
+.queding{
+	padding-top: 5px;
+	height: 38px;
+	float: left;
+	width: 49.99%;
+	cursor: pointer;
+	text-align: center;
+	font-size: 20px;
+	background: #00a1fd;
+	color: white;
+}
+.option1{
+	cursor: pointer;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 20px;
+	padding-top: 6px;
+	float: left;
+	width: calc(50% - 20px);
+	height: 35px;
+	border: solid 1px #00a1fd;
+}
+.click{
+	color: white;
+	background: #00a1fd;
+}
+.goback{
+	margin-left:5px;
+	width:100px;
+	height:50px;
+	text-align:center;
+	background:#00a1fd;
+	color:white;
+	padding-top:15px;
+	border-radius:5px;
+	cursor:pointer;
+	float: left;
+}
+.s2{
+	float:left;
+	margin-top:15px;
+	height:34px;
+	width:calc(75% - 6px);
+	border:2px solid #00a1fd;
+	border-radius:5px;
+}
+.datetitle{
+	width:30px;
+	height:30px;
+	background:#00a1fd;
+	color:white;
+	padding:5px;
+	float:left;
+	text-align:center;
+}
+kendo-datepicker{
+	width:calc(50% - 30px);
+	float:left;
+}
+#sousuo img{
+	margin-left: 10px;
+}
+.grid{
+	float:left;
+	margin-top:20px;
+}
+.title{
+	text-align: center;
+	margin-top: -15px;
+}

@@ -1,0 +1,170 @@
+							
+<div kendoDialogContainer></div>
+<div class="VivaTimeline">
+	<div class="selectors-mohu">
+		<div class="sousuokuang">
+			<kendo-autocomplete #list [data]="data" [filterable]="true" placeholder="请输入搜索内容" (keyup.enter)="sousuo()"></kendo-autocomplete>
+			<div id="sousuo" (click)="sousuo()" title="搜索">
+				<img src="resources/theme/default/modules/timeline/images/fangda.png" style="margin-left: 10px;"/>
+			</div>
+		</div>
+		<div class="caozuo">
+			<div id="qingkong" (click)="qingkong()" title="一键清空">重置</div>
+			<div id="shoufang" (click)="shousuo()" title="更多">
+				<img src="resources/theme/default/modules/timeline/images/arrow.png"/>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="selectors-jingque" hidden="hidden">
+		<div id="s1" class="selector1 normal" (click)="toggle1()">
+			干系单位▽
+		</div>
+		<div id="s2" class="selector1 normal" (click)="toggle2()">
+			信息分类▽
+		</div>
+		<div id="s3" class="selector1 normal" (click)="toggle3()">
+			信息来源▽
+		</div>
+		<div id="s4" class="selector1 normal" (click)="toggle4()">
+			附件包含▽
+		</div>
+	</div>
+	<div id="gxdw" class="selector-main" hidden="hidden">
+		<div class="selector-detail">
+			<div *ngFor="let gxdw of gxdwList" id="sela{{gxdw.dwcode}}" class="option1" (click)="sel1(gxdw.dwcode)">
+				{{gxdw.dwm}}
+			</div>
+		</div>
+		<div class="selector-footer">
+			<div class="chongzhi" (click)="chongzhi1()">
+				重置
+			</div>
+			<div class="queding" (click)="queding1()">
+				确定
+			</div>
+		</div>
+	</div>
+	<div id="xxfl" class="selector-main" hidden="hidden">
+		<div class="selector-detail">
+			<div *ngFor="let xxfl of xxflList"  id="selb{{xxfl.code}}" class="option1" (click)="sel2(xxfl.code)">
+				{{xxfl.name}}
+			</div>
+		</div>
+		<div class="selector-footer">
+			<div class="chongzhi" (click)="chongzhi2()">
+				重置
+			</div>
+			<div class="queding" (click)="queding2()">
+				确定
+			</div>
+		</div>
+	</div>
+	<div id="xxly" class="selector-main" hidden="hidden">
+		<div class="selector-detail">
+			<div *ngFor="let xxly of xxlyList"  id="selc{{xxly.code}}" class="option1" (click)="sel3(xxly.code)">
+				{{xxly.name}}
+			</div>
+		</div>
+		<div class="selector-footer">
+			<div class="chongzhi" (click)="chongzhi3()">
+				重置
+			</div>
+			<div class="queding" (click)="queding3()">
+				确定
+			</div>
+		</div>
+	</div>
+	<div id="fjbh" class="selector-main" hidden="hidden">
+		<div class="selector-detail">
+			<div *ngFor="let fjbh of fjbhList"  id="seld{{fjbh.code}}" class="option1" (click)="sel4(fjbh.code)">
+				{{fjbh.name}}
+			</div>
+			<!-- <div id="seld1210" class="option1" (click)="sel4('1210')">
+				徐家汇派出所
+			</div> -->
+		</div>
+		<div class="selector-footer">
+			<div class="chongzhi" (click)="chongzhi4()">
+				重置
+			</div>
+			<div class="queding" (click)="queding4()">
+				确定
+			</div>
+		</div>
+	</div>
+	<dl class="timeline">
+		<dd>
+			<div class="row">
+    			<div class="titleimg"><img src="resources/theme/default/modules/timeline/images/title.png"></div>
+    			<div class="titledoc">"{{sjm}}"时间轴</div>
+    		</div>
+		</dd>
+		<dd *ngFor="let data of dataList; let i = index;">
+			<div class="row">
+				<div class="circ">{{data.bs}}</div>
+				<div class="datetime" [innerHTML]="data.sj | safeHTML"></div>
+				<div class="person">
+					<span [innerHTML]="data.fqdwm | safeHTML"></span>
+					<span [innerHTML]="data.czrxm | safeHTML"></span>
+				</div>
+			</div>
+			<div id="{{data.id}}" class="events">
+				<div class="events-body">
+					<div class="row">
+						<div class="header">
+							<a (click)="getItem(data.id)" [innerHTML]="data.title | safeHTML" style="cursor: pointer;"></a>
+						</div>
+					</div>
+					<div *ngIf="data.content!=undefined&&data.content!=''&&data.content!=null" class="row">
+						<div class="media">
+							<div class="media-body">
+								<div *ngIf="data.tpfj!=undefined&&data.tpfj.length!=0" class="col-md-4 media-right picture">
+									<a (click)="OpenPicture(data.tpfj)" style="cursor: pointer;">
+										<img class="events-object img-responsive img-rounded picture" src="{{data.tpfj[0].fileurl}}/{{data.tpfj[0].filename}}.{{data.tpfj[0].extension}}" />
+									</a>
+								</div>
+								<div class="events-desc" [innerHTML]="data.content | safeHTML"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div *ngIf="(data.spfj!=undefined&&data.spfj.length!=0&&data.video!=null)||(data.ypfj!=undefined&&data.ypfj.length!=0)||(data.dw!=undefined&&data.dw!=''&&data.dw!=null)||(data.wjfj!=undefined&&data.wjfj.length!=0)" class="events-footer">
+					<div class="row" style="margin-left:2px;">
+						<a (click)="OpenVideo(data.spfj)" style="cursor: pointer;">
+							<div *ngIf="data.spfj!=undefined&&data.spfj.length!=0" class="img">
+								<div class="video"><img class="events-object img-responsive img-rounded" src="resources/theme/default/modules/timeline/images//video.png" /></div>
+								<div class="count">
+									{{data.spfj.length}}
+								</div>
+							</div>
+						</a>
+						<a (click)="OpenMp3(data.ypfj)" style="cursor: pointer;">
+							<div *ngIf="data.ypfj!=undefined&&data.ypfj.length!=0" class="img">
+								<div class="mp3"><img class="events-object img-responsive img-rounded" src="resources/theme/default/modules/timeline/images//mp3.png" /></div>
+								<div class="count">
+									{{data.ypfj.length}}
+								</div>
+							</div>
+						</a>
+						<a (click)="OpenMap(data.dw)" style="cursor: pointer;">
+							<div *ngIf="data.dw!=undefined" class="img">
+								<div class="map"><img class="events-object img-responsive img-rounded" src="resources/theme/default/modules/timeline/images/map.png" /></div>
+								<!--<div class="count"></div>-->
+							</div>
+						</a>
+						<a (click)="OpenFujian(data.wjfj)" style="cursor: pointer;">
+							<div *ngIf="data.wjfj!=undefined&&data.wjfj.length!=0" class="img">
+								<div class="fujian"><img class="events-object img-responsive img-rounded" src="resources/theme/default/modules/timeline/images//fujian.png" /></div>
+								<div class="count">
+									{{data.wjfj.length}}
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</dd>
+	</dl>
+</div>

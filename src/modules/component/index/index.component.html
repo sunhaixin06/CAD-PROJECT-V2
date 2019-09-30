@@ -1,0 +1,31 @@
+<div class="cad-main">
+    <div class="cad-left">
+        <!-- 用户 -->
+        <left-user *ngIf="isHuaWu === 2 && userType === 1"></left-user>
+        <!-- 通话 -->
+        <left-phone *ngIf="isHuaWu === 2 && userType === 2"></left-phone>
+        <!-- 会话列表 -->
+        <chat-list *ngIf="isHuaWu === 1 && chatType === 1" (chatListEvent)="chatListEvent($event)"></chat-list>
+        <!-- 聊天页面 -->
+        <chat-page *ngIf="isHuaWu === 1 && chatType === 2" (chatPageEvent)="chatPageEvent($event)"></chat-page>
+    </div>
+    <div class="cad-right">
+        <div class="cad-right-bg">
+            <header-page (headerEvent)="headerEvent($event)"></header-page>
+            <div class="main">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-buttons" *ngIf="chatType !== 2">
+        <div class="fei-btn" [ngClass]="{ 'active': isHuaWu === 1 }" (click)="switchHuaWu(1)">
+            <p>非话务</p>
+            <span>3</span>
+        </div>
+        <div class="huawu-btn" [ngClass]="{ 'active': isHuaWu === 2 }" (click)="switchHuaWu(2)">
+            <p>话务</p>
+            <span>43</span>
+        </div>
+        <p class="{{'active-line active-'+isHuaWu}}"></p>
+    </div>
+</div>

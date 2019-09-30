@@ -1,0 +1,23 @@
+<div class="popup-page">
+<button kendoButton *ngIf="!opened" (click)="open()">popupCancel</button>
+<kendo-dialog title="作废" *ngIf="opened" (close)="close('cancel')" [height]="447" [width]="538">
+    <!-- <p style="margin: 30px; text-align: center;">Are you sure you want to continue?</p> -->
+    <div class="popup-page-cld">
+        <p>类型</p>
+        <kendo-dropdownlist [data]="listItems">
+        </kendo-dropdownlist>
+        <p>理由</p>
+        <div>
+            <input type="text">
+        </div>
+    </div>
+    <kendo-dialog-actions>
+        <div>
+            <button kendoButton (click)="close('no')">取消</button>
+            <button kendoButton (click)="close('yes')" primary="true" class="closetrue">保存</button>
+        </div>
+    </kendo-dialog-actions>
+</kendo-dialog>
+</div>
+<popup-Feedback></popup-Feedback>
+<popup-Blacklist></popup-Blacklist>

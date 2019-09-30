@@ -1,0 +1,80 @@
+<div routerLink=".." class="goback">返回</div>
+<div class="title">
+  <h1>{{systemName}}系统IP为{{systemIp}}的系统日志信息</h1>
+</div>
+<div class="systemLog">
+  <div class="selectors-mohu">
+    <div class="sousuokuang">
+      <input kendoTextBox placeholder="请输入搜索内容" (keyup.enter)="sousuo()"/>
+      <div id="sousuo" (click)="sousuo()" title="搜索">
+        <img src="resources/theme/default/modules/timeline/images/fangda.png"/>
+      </div>
+    </div>
+    <div class="caozuo">
+      <div id="qingkong" (click)="qingkong()" title="一键清空">重置</div>
+      <div id="shoufang" (click)="shousuo()" title="更多">
+        <img src="resources/theme/default/modules/timeline/images/arrow.png"/>
+      </div>
+    </div>
+  </div>
+  <div class="selectors-jingque" hidden="hidden">
+    <div id="s1" class="selector1 normal" (click)="logLeval()">
+      日志等级
+    </div>
+    <div class="s2">
+      <div class="datetitle">始</div>
+      <kendo-datepicker id="starttime" [(value)]="startvalue" [format]="'yyyy/MM/dd HH:mm:ss'" placeholder="请输入起始日期时间" ></kendo-datepicker>
+      <div class="datetitle">至</div>
+      <kendo-datepicker id="endtime" [(value)]="endvalue" [format]="'yyyy/MM/dd HH:mm:ss'" placeholder="请输入截止日期时间" ></kendo-datepicker>
+    </div>
+  </div>
+  <div id="logLeval" class="selector-main" hidden="hidden">
+    <div class="selector-detail">
+      <div *ngFor="let logLeval of logLevalList" id="sel{{logLeval}}" class="option1" (click)="sel(logLeval)">
+        {{logLeval}}
+      </div>
+    </div>
+    <div class="selector-footer">
+      <div class="chongzhi" (click)="chongzhi()">
+        重置
+      </div>
+      <div class="queding" (click)="queding()">
+        确定
+      </div>
+    </div>
+  </div>
+  <div class="grid">
+    <kendo-grid
+    [data]="gridView"
+    [height]="700"
+    [pageSize]="state.take"
+    [skip]="state.skip"
+    [pageable]="true"
+    [sort]="state.sort"
+    [sortable]="true"
+    (dataStateChange)="dataStateChange($event)"
+    >
+    <kendo-grid-column field="rowNum" title="序号" width="20" [sortable]="false">
+        <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+					{{state.skip + dataItem.rowNum + 1}}
+				</ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="log_date" title="日志时间" width="60">
+        <!-- <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+            <div [innerHTML]="dataItem.log_date | safehtml"></div>
+				</ng-template> -->
+    </kendo-grid-column>
+    <kendo-grid-column field="type" title="日志等级" width="40" [sortable]="false">
+        <!-- <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+            <div [innerHTML]="dataItem.type | safehtml"></div>
+				</ng-template> -->
+    </kendo-grid-column>
+    <kendo-grid-column field="message" title="日志信息" width="160" [sortable]="false">
+        <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+            <div [innerHTML]="dataItem.message | safehtml"></div>
+				</ng-template>
+    </kendo-grid-column>
+    <kendo-grid-messages pagerOf="共" pagerItems="条"></kendo-grid-messages>
+    </kendo-grid>
+  </div>
+</div>

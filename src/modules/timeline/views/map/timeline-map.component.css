@@ -1,0 +1,25 @@
+.header{
+	height: 40px;
+	background: #00a1fd;;
+	color: #ffffff;
+    font-family: "微软雅黑";
+	text-align: center;
+	padding-top: 3px;
+}
+.header h5{
+	background: #00a1fd;;
+	color: #ffffff;
+    font-family: "微软雅黑";
+	text-align: center;
+	font-size:16px
+}
+.header div{
+	cursor: pointer;float: right;margin-top: -30px;margin-right: 10px;
+}
+/* .main {
+	border: 2px solid #00a1fd;
+	padding: 2px;
+} */
+.main img{
+	width: 100%;
+}

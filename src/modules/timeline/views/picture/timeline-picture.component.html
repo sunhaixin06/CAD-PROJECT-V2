@@ -1,0 +1,19 @@
+<div class="timeline-picture">
+	<div class="base">
+		<div class="base_two">
+			<div class="base_left" (click)="base_left_click()" base_left_mouse><span class="jiantou_left"></span></div>
+			<div class="base_content"></div>
+			<div class="base_right" (click)="base_right_click()" base_right_mouse><span class="jiantou_right"></span></div>
+		</div>	
+		<div class="toggle"><div class="list" (click)="listClick()" list_mouse>&nbsp;&nbsp;图片列表<span></span>&nbsp;&nbsp;</div></div>
+		<div class="bottle">
+			<span class="l" (click)="bootle_l_click()"></span>
+			<div id="list_shot">
+			<ul>
+				<li *ngFor="let url of urlList; let i = index;" (click)="liClick(i)"><img src="{{url}}"  width="115px" height="100px"></li>
+			</ul>
+			</div>
+			<span class="r" (click)="bootle_r_click()"></span>
+		</div>	
+	</div>
+</div>

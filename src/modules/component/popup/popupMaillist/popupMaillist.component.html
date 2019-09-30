@@ -1,0 +1,52 @@
+<span class="icon-addressbook" (click)="open()"></span>
+  <kendo-dialog title="通讯录" *ngIf="openeds" (close)="close('cancel')" [height]="700" [width]="987">
+      <div class="opencenter">
+          <div class="openleft">
+                <div class="tabs-tips">
+                    <div [ngClass]="{ 'active': bottomBtnIndex === 0 }" (click)="switchBottomTab(0)">各分局</div>
+                    <div [ngClass]="{ 'active': bottomBtnIndex === 1 }" (click)="switchBottomTab(1)">指挥中心</div>
+                    <div [ngClass]="{ 'active': bottomBtnIndex === 2 }" (click)="switchBottomTab(2)">其他单位</div>
+                </div>
+                <div class="edit-content-bottom-box">
+                    <!-- 警情处置 -->
+                    <div *ngIf="bottomBtnIndex === 0">
+                        <ul class="level-ul scrollbar">
+                            <li [class.active]="item.isSelect" *ngFor="let item of policeData;let i = index">
+                                <span class="radio-cirl icon-right22" (click)="selectCell(0, false, i)"></span>
+                                <span class="radio-cirl icon-select-circle" (click)="selectCell(0, true, i)"></span>
+                                <p class="word-ellipsis" title="{{item.name}}">{{item.name}}</p>
+                                <i class="icon-arrowright" *ngIf="item.child.length > 0" (click)="expand(0, item.child)"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 关联警情 -->
+                    <div *ngIf="bottomBtnIndex === 1">2</div>
+                    <!-- 程序化处警 -->
+                    <div *ngIf="bottomBtnIndex === 2">3</div>
+                </div>
+          </div>
+          <div class="openright">
+                <div class="openright_top">已选择单位 3个</div>
+                <ul class="openright_center">
+                    <li>单位名称</li>
+                    <li>单位编码</li>
+                    <li>行政区域</li>
+                    <li>地址</li>
+                    <li>联系方式</li>
+                </ul>
+                <ul class="openright_bottom">
+                    <li>黄埔分局</li>
+                    <li>029381</li>
+                    <li>黄埔区</li>
+                    <li>延安西路239号</li>
+                    <li>029381</li>
+                </ul>
+          </div>
+      </div>
+      <kendo-dialog-actions>
+        <div class="footer">
+            <button kendoButton (click)="close('no')">取消</button>
+            <button kendoButton (click)="close('yes')" primary="true" class="closetrue">一键拨打</button>
+        </div>
+    </kendo-dialog-actions>
+  </kendo-dialog>

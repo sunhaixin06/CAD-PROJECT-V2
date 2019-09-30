@@ -1,0 +1,11 @@
+{
+    "/timelineservice": {   
+     "target": "http://localhost:8080/ds-timeline-web/",   
+     "secure": false
+    },
+    "/logservice":{
+     "target": "http://localhost:8080/ds-logservice-web/",   
+     "secure": false
+    }    
+}
+   

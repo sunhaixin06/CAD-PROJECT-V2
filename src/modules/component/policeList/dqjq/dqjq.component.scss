@@ -1,0 +1,113 @@
+.dqjq {
+    // padding: 5px;
+    .jqzt{
+                width: 90px;
+                height: 30px;
+                color: #fff;
+                font-size: 18px;
+                line-height: 30px;
+                text-align: center;
+            }
+
+            .green{
+                background: url(../../../../resources/images/right-caselist-label-green.svg) no-repeat;
+            }
+
+            .blue{
+                background: url(../../../../resources/images/right-caselist-label-blue.svg) no-repeat;
+            }
+
+            .grey{
+                background: url(../../../../resources/images/right-caselist-label-grey.svg) no-repeat;
+            }
+
+            .red{
+                background: url(../../../../resources/images/right-caselist-label-red.svg) no-repeat;
+            }
+
+            .icon:hover{
+                color: #2493ff !important;
+            }
+
+            .wrap{
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+
+                .left{
+
+                    >span{
+                        margin-right: 100px;
+                        font-size: 20px;
+
+                        >label{
+                            margin: 0 5px 0 0;
+                            color: #9da4af;
+                            font-weight: normal;
+                        }
+
+                        .btn-call{
+                            margin: 0 0 0 10px;
+                            display: inline-flex;
+                            width: 22px;
+                            height: 22px;
+                            border-radius: 50%;
+                            color: #fff;
+                            background-color: #96a7c4;
+                            z-index: 2;
+                            cursor: pointer;
+                        }
+                        .btn-call::before{
+                            align-self: center;
+                            // content: "";
+                            // background: 
+                        }
+                    }
+                }
+
+                .right{
+
+                    .icon{
+                        display: inline-flex;
+                        justify-content: center;
+                        margin-left: 5px;
+                        width: 40px;
+                        height: 17px;
+                        color: #96a7c4;
+                        font-weight: bold;
+                        cursor: pointer;
+                        border-right: 1px solid #96a7c4;
+                    }
+
+                    .icon:last-child{
+                        border-right: none;
+                    }
+                }
+            }
+
+    .last-cell-box{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        color: #0A2A5E;
+        .love-level{
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            cursor: pointer;
+            &.love-level-0{
+                background: url(../../../../resources/images/star.svg) no-repeat;
+                background-size: 100% 100%;
+            }
+            &.love-level-2{
+                background: url(../../../../resources/images/star-1.svg) no-repeat;
+                background-size: 100% 100%;
+            }
+            &.love-level-1{
+                background: url(../../../../resources/images/star-2.svg) no-repeat;
+                background-size: 100% 100%;
+            }
+        }
+    }
+}

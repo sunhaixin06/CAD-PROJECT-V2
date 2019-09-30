@@ -1,0 +1,159 @@
+.police-units{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    .level-1{
+        width: 251px;
+        padding: 0 11px;
+        .level-top{
+            display: flex;
+            margin-bottom: 13px;
+            .name{
+                height: 30px;
+                line-height: 30px;
+                font-size: 20px;
+                color: #0A2A5E;
+                margin-right: 19px;
+                white-space: nowrap;
+            }
+            .input{
+                width: 117px;
+                height: 30px;
+                border: 1px solid #CDD9E6;
+                border-radius: 2px;
+                color: #0A2A5E;
+                padding: 0 9px;
+                display: flex;
+                align-items: center;
+                span{
+                    font-size: 18px;
+                }
+                input{
+                    font-size: 16px;
+                    border: none;
+                    background-color: transparent;
+                    width: 84px;
+                    &::-webkit-input-placeholder{
+                        color: #7A8BA8;
+                    }
+                }
+            }
+        }
+        .level-top-all{
+            display: flex;
+            margin-bottom: 13px;
+            font-size: 18px;
+            color: #0A2A5E;
+            align-items: center;
+            position: relative;
+            top: 6px;
+            padding: 0 7.5px;
+            &.active{
+                .radio-cirl{
+                    &.icon-right22{
+                        display: inline-block;
+                    }
+                    &.icon-select-circle{
+                        display: none;
+                    }
+                }
+            }
+            .radio-cirl{
+                width: 18px;
+                height: 18px;
+                font-size: 20px;
+                display: inline-block;
+                margin-right: 8px;
+                cursor: pointer;
+                &.icon-right22{
+                    display: none;
+                    color: #347BFE;
+                }
+                &.icon-select-circle{
+                    display: inline-block;
+                    color: #C1CDDA;
+                }
+            }
+        }
+        // &:nth-child(2) .level-ul:after,
+        // &:nth-child(3) .level-ul:after,
+        // &:nth-child(4) .level-ul:after
+        // {
+        //     content: '';
+        //     width: 1px;
+        //     height: 100%;
+        //     background-color: #DFE9F5;
+        //     position: absolute;
+        //     top: 0;
+        //     right: 1px;
+        // }
+        // &:nth-last-child(1) .level-ul:after{
+        //     content: none;
+        // }
+    }
+    .level-ul{
+        height: 209px;
+        overflow-y: auto;
+        position: relative;
+        &:after{
+            content: '';
+            width: 1px;
+            height: 100%;
+            background-color: #DFE9F5;
+            position: absolute;
+            top: 0;
+            right: 1px;
+        }
+        li{
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            font-size: 18px;
+            color: #0A2A5E;
+            padding: 0 7.5px;
+            display: flex;
+            align-items: center;
+            &:hover{
+                background: #E0EBFC;
+            }
+            &.active{
+                .radio-cirl{
+                    &.icon-right22{
+                        display: inline-block;
+                    }
+                    &.icon-select-circle{
+                        display: none;
+                    }
+                }
+            }
+            .radio-cirl{
+                width: 18px;
+                height: 18px;
+                font-size: 20px;
+                display: inline-block;
+                cursor: pointer;
+                &.icon-right22{
+                    display: none;
+                    color: #347BFE;
+                }
+                &.icon-select-circle{
+                    display: inline-block;
+                    color: #C1CDDA;
+                }
+            }
+            p{
+                margin-bottom: 0;
+                display: inline-block;
+                margin-left: 6.5px;
+                width: 80%;
+            }
+            i{
+                font-weight: normal;
+                cursor: pointer;
+            }
+        }
+    }
+}

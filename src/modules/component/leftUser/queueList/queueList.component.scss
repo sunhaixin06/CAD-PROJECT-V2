@@ -1,0 +1,126 @@
+.queue-list{
+    height: 430px;
+    overflow-y: auto;
+    li{
+        height: 69px;
+        padding: 10px 0 0 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:after{
+            content: '';
+            width: 380px;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0,0,0,.2), rgba(0,0,0,.1));
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        &.active, &:hover{
+            background-image: linear-gradient(90deg, rgba(155,180,215,0.20) 0%, rgba(142,173,214,0.00) 100%);
+        }
+        &:hover{
+            .icon-link2{
+                display: inline-block;
+            }
+        }
+        >span{
+            width: 43px;
+            height: 26px;
+            border-radius: 8px 0 15px 0;
+            float: left;
+            margin-right: 16px;
+            line-height: 26px;
+            text-align: center;
+            font-size: 18px;
+            color: #FFFFFF;
+            &.blue{
+                background: #347BFE;
+                // background: url(../../../../resources/images/right-caselist-label-blue.svg) no-repeat;
+                // background-size: 100% 100%;
+            }
+        }
+        &:nth-child(1) .biaoshi:after{
+            height: 50%;
+            top: 50%;
+            border-radius: 4.5px 4.5px 0 0;
+        }
+        &:nth-last-child(1) .biaoshi:after{
+            height: 50%;
+            border-radius: 0 0 4.5px 4.5px;
+        }
+    }
+    .history-warn-content{
+        width: 272px;
+        float: left;
+        div{
+            width: 263px;
+            font-size: 20px;
+            color: #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+            span:nth-child(2){
+                font-size: 16px;
+            }
+        }
+    }
+    .biaoshi{
+        width: 40px;
+        height: 100%;
+        position: absolute;
+        right: 5px;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:after{
+            content: '';
+            width: 9px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0,0,0,0.10);
+            z-index: 1;
+        }
+        &.chaoshi p{
+            display: block;
+        }
+        &.un-chaoshi span{
+            display: inline-block;
+        }
+        span{
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background: #535F73;
+            border-radius: 50%;
+            font-size: 20px;
+            text-align: center;
+            line-height: 24px;
+            color: #fff;
+            font-style: normal;
+            display: none;
+            position: relative;
+            z-index: 2;
+            background: #535F73 url(../../../../resources/images/icon-time.svg) no-repeat;
+            background-size: 100% 100%;
+        }
+        p{
+            width: 40px;
+            height: 24px;
+            text-align: center;
+            line-height: 23px;
+            margin: 0;
+            background: #FA5C6E;
+            border-radius: 12px;
+            font-size: 16px;
+            color: #FFFFFF;
+            display: none;
+            position: relative;
+            z-index: 2;
+        }
+    }
+}

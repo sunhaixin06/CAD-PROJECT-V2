@@ -1,0 +1,18 @@
+<div class="dropdown" id="{{dropdownTime}}">
+    <div class="btn-caret dropdown-toggle" type="button" id="{{dropdownMenu}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" (click)="initializeList()">
+        <!-- Dropdown -->
+        <span class="caret"></span>
+    </div>
+    <div class="dropdown-menu " aria-labelledby="dropdownMenu" [ngStyle]="{'width':indexCol*154+'px'}">
+        <div class="list-items fadeIn animated scrollbar" *ngFor="let items of showData;let indexCol = index;" [ngStyle]="{'display': items.isShow ? 'inline-block' : 'none'}">
+            <div class="list-group-item " *ngFor="let item of items" [ngClass]="{'list-group-item-active':colRow[indexCol] == item.code}" (click)="getItem(item)" (mouseenter)="hoverFuc(item.code,indexCol,item.isHasChild)">
+                <span>{{item.name}}</span>
+                <span class="pull-right icon-arrowright" *ngIf="item.isHasChild"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <input type="text" [(ngModel)]="inputData" (propertychange)="screenData()" /> -->
+
+<input type="hidden" name='inputData' [(ngModel)]="inputData">

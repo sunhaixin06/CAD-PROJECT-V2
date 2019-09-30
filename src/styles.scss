@@ -1,0 +1,468 @@
+/* You can add global styles to this file, and also import other style files */
+$accent: #2493FF; // 更改kendo全局dropdownlist下拉中选中的背景色
+@import "~@progress/kendo-theme-default/scss/all.scss";
+@font-face{
+    font-family: PingFangRegular;
+    src: url('./resources/font/PingFang\ Regular.ttf');
+}
+@font-face{
+    font-family: PingFangMedium;
+    src: url('./resources/font/PingFang\ Medium.ttf');
+}
+@font-face{
+    font-family: SourceHanSansSCNormal;
+    src: url('./resources/font/SourceHanSansSC-Normal.otf');
+}
+@font-face{
+    font-family: SourceHanSansSCMedium;
+    src: url('./resources/font/SourceHanSansSC-Medium.otf');
+}
+@font-face{
+    font-family: SourceHanSansSCLight;
+    src: url('./resources/font/SourceHanSansSC-Light.otf');
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  box-sizing: border-box;
+  vertical-align:baseline;
+  background:transparent;
+//   PingFangRegular, 
+// SourceHanSansSCLight, SourceHanSansSCMedium, SourceHanSansSCNormal, 
+  font-family: "思源黑体","微软雅黑","Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    // width: 1920px;
+    // height: 1080px;
+    overflow: auto;
+    background: url(./resources/images/bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+h1,h2,h3,h4,h5,h6,em,i,dt{
+  font-weight: normal;
+  font-style: normal;
+}
+ul,ol,li {
+  list-style-type: none;
+}
+a {
+  color: #666;
+  text-decoration: none;
+  outline: 0;
+}
+a:hover {
+  text-decoration: none;
+}
+input,button{
+  outline: none;
+}
+input{
+  text-indent: 5px;
+}
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+.scrollbar::-webkit-scrollbar{
+  width: 10px;
+  height: 10px;
+//   background-color: #fff;
+  background: rgba(193,205,218,0.30);
+    border-radius: 5px;
+}
+/*定义滚动条的轨道，内阴影及圆角*/
+.scrollbar::-webkit-scrollbar-track{
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); */
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0);
+}
+/*定义滑块，内阴影及圆角*/
+.scrollbar::-webkit-scrollbar-thumb{
+  /*width: 10px;*/
+  height: 20px;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+  background-color: #dbdee2;
+}
+.scrollbarIe{
+  scrollbar-face-color:#dfe1e3;
+  scrollbar-base-color:white;
+  scrollbar-track-color:white;
+  scrollbar-arrow-color:white;
+  scrollbar-3dlight-color:white;
+  scrollbar-dark-shadow-color:white;
+  scrollbar-shadow-color:white;
+}
+.ant-calendar{
+    width: 360px!important;
+}
+// 相对于父元素水平垂直居中
+.center-child{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.word-ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.left-phone-top{
+    height: 66px;
+    line-height: 66px;
+    // opacity: 0.3;
+    background: rgba(255,255,255,0.20);
+    padding-left: 31px;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    overflow: hidden;
+    img{
+        width: 34px;
+        height: 39.2px;
+        margin: 16px 22px 0 0;
+        float: left;
+    }
+}
+/*** 底部按钮公共样式 ***/
+.btn-common{
+    width: 190px;
+    height: 46px;
+    outline: none;
+    border: none;
+    background: rgba(127,143,162,.9);
+    border-radius: 4px;
+    float: left;
+    font-size: 22px;
+    color: #C1CDDA;
+    &:hover{
+        opacity: 1;
+        color: #DCE5EF;
+        background: rgba(127,143,162,1);
+        // background-image: linear-gradient(-136deg, #4180FD 0%, #2493FF 100%);
+    }
+    &.save{
+        opacity: 1;
+        color: #FFFFFF;
+        background-image: linear-gradient(-136deg, rgba(65, 128, 253, .9) 0%, rgba(36, 147, 255, .9) 100%);
+        &:hover{
+            opacity: 1;
+            color: #FFFFFF;
+            background-image: linear-gradient(-136deg, #4180FD 0%, #2493FF 100%);
+        }
+    }
+}
+
+.k-dropdown .k-dropdown-wrap{
+    background-color: transparent!important;
+    background-image: none!important;
+}
+.k-dropdown-wrap .k-input{
+    height: 100%!important;
+    color: #0A2A5E!important;
+}
+.sec-item .k-dropdown-wrap .k-input{
+    font-size: 20px!important;
+}
+.k-widget{
+    border-width: 0;
+}
+.k-grid tbody tr {
+    &.even{
+        background-color: #F6FAFF;
+    }
+    &.odd{
+        background-color: transparent;
+    }
+}
+.k-grid tbody tr:hover{
+    background-color: #F6FAFF;
+}
+.k-grid-header .k-header > .k-link{
+    margin: -8px 0 -8px 0px;
+    padding: 8px 0px 8px 0px;
+    &:focus{
+        outline: none;
+    }
+    span{
+        width: 1em;
+        height: 1em;
+        display: inline-block;
+        margin: 0 .4ex;
+        color: #96A7C4;
+        &::before{
+            content: "\e97b";
+            font-family: 'icomoon';
+            display: inline-block;
+            transform: scale(1.5);
+            position: relative;
+            top: 3px;
+            left: 3px;
+        }
+        &.k-icon{
+            &.k-i-sort-asc-sm{
+                margin-top: 3px;
+
+                &::before{
+                    content: "\E127";
+                    font-family: 'WebComponentsIcons';
+                    transform: scale(1);
+                    left: 0px;
+                }
+            }
+            &.k-i-sort-desc-sm{
+                margin-top: 3px;
+                &::before{
+                    content: "\E128";
+                    font-family: 'WebComponentsIcons';
+                    transform: scale(1);
+                    left: 0px;
+                }
+            }
+        }
+    }
+}
+.k-icon.k-i-filter{
+    color: #96A7C4;
+}
+.k-grid-header-wrap{
+    border-color: #C1CDDA;
+    border-width: 0 0 0 0;
+}
+.k-grid-header .k-header{
+    height: 50px;
+    font-size: 18px;
+    color: #0A2A5E;
+    border-width: 0;
+    position: relative;
+    padding: 8px 12px 12px;
+    &:after{
+        content: '';
+        position: absolute;
+        right: 1px;
+        top: 13px;
+        width: 1px;
+        height: 24px;
+        background-color: #96A7C4;
+        opacity: 0.68;
+    }
+    &:first-child:after{
+        content: none;
+    }
+    &:nth-last-child(1):after{
+        content: none;
+    }
+}
+.k-grid tbody td{
+    height: 54px;
+    font-size: 18px;
+    color: #0A2A5E;
+    border-width: 0 0px 1px 0px;
+    border-color: #C1CDDA;
+}
+.k-grid .k-hierarchy-cell > .k-icon{
+    &.k-i-plus::before{
+        position: relative;
+        top: 14px;
+    }
+    &.k-minus::before{
+        position: relative;
+        top: 14px;
+    }
+}
+
+.k-grid .k-hierarchy-cell > .k-plus, .k-grid .k-hierarchy-cell > .k-minus{
+    font-size: 0;
+}
+
+.k-grid td.k-state-selected, .k-grid tr.k-state-selected > td{
+    border-bottom: none !important;
+    color: #0A2A5E !important;
+    background-color: rgba(224,235,252, 1) !important;
+}
+
+.k-grid tbody .k-detail-row{
+    background-color: rgba(224,235,252, 1) !important;
+}
+.k-grid tbody .k-detail-row td{
+    border-top: none !important;
+}
+// 列表页面
+.k-grid-content{
+    /*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+    &::-webkit-scrollbar{
+        width: 10px;
+        height: 10px;
+    //   background-color: #fff;
+        background: rgba(193,205,218,0.30);
+        border-radius: 5px;
+    }
+    /*定义滚动条的轨道，内阴影及圆角*/
+    &::-webkit-scrollbar-track{
+        /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); */
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0);
+    }
+    /*定义滑块，内阴影及圆角*/
+    &::-webkit-scrollbar-thumb{
+        /*width: 10px;*/
+        height: 20px;
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+        background-color: #dbdee2;
+    }
+}
+.k-window{
+    background: #FDFEFF;
+    box-shadow: 0 0 20px 0 rgba(12,72,153,0.20);
+    border-radius: 16px;
+}
+.k-window-title{
+    font-size: 24px;
+    color: #0A2A5E;
+}
+.k-window-titlebar, .k-dialog-titlebar{
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 63px;
+    background: #FDFEFF;
+    color: #0A2A5E;
+}
+.k-window-actions, .k-dialog-actions {
+    border: 1px solid rgba(10,42,94,0.40);
+    border-radius: 50%;
+    a:hover, a::before{
+        border-radius: 50%;
+        border: 1px solid rgba(10,42,94,0.40);
+    }
+}
+/***  分辨率适配  ***/
+@media screen and (min-height: 900px) and (max-height: 1078px) { // 1920*1080不全屏时
+    body {
+        // 左侧
+        .un-save,.queue-list{
+            height: 335px!important;
+        }
+        .history-warn{
+            height: 240px!important;
+            li{
+                height: 67px!important;
+            }
+        }
+        .chat-list .chat-list-tasks{
+            height: 695px!important;
+        }
+        .secret-info .person{
+            height: 60px!important;
+            line-height: 60px!important;
+        }
+        .secret-info .secret-info-item{
+            height: 36px!important;
+            line-height: 39px!important;
+        }
+        // 编辑页面
+        .edit-police-page .edit-content-top .edit-content-tabs,
+        .edit-police-page .edit-content-bottom .edit-content-tabs{
+            height: 75px!important;
+        }
+        .edit-police-page .edit-content-top .edit-content-tabs .tabs-tips,
+        .edit-police-page .edit-content-bottom .edit-content-tabs .tabs-tips{
+            padding-top: 9px!important;
+        }
+        .edit-police-page .edit-content-top .edit-content-tabs .tabs-time{
+            margin-top: 9px!important;
+        }
+        .edit-police-page .edit-content-top .edit-content-tabs .tabs-right,
+        .edit-police-page .edit-content-bottom .edit-content-tabs .tabs-right{
+            height: 53px!important;
+        }
+        .police-dispose .police-dispose-left,
+        .police-dispose .police-dispose-center,
+        .police-dispose .police-dispose-right{
+            height: 230px!important;
+        }
+        .police-dispose .police-dispose-center .police-dispose-center-content,
+        .police-dispose-right-content{
+            max-height: 184px!important;
+        }
+        .edit-police-page .edit-content-top .edit-content-top-box .title-comp{
+            margin-bottom: 3px!important;
+        }
+        .edit-police-page .edit-content-top .icident-info .icident-info-left > div,
+        .edit-police-page .edit-content-top .icident-info .icident-info-right > div{
+            margin-bottom: 10px!important;
+        }
+        .edit-police-page .edit-content-top .icident-info .icident-info-right .sec textarea{
+            height: 181px!important;
+        }
+        .edit-police-page .edit-content-bottom .edit-content-bottom-box{
+            padding-top: 5px!important;
+        }
+        .edit-police-page .edit-content-bottom .edit-content-bottom-box{
+            height: 248px!important;
+        }
+        .edit-police-page .submit-tabs{
+            top: -15px!important;
+        }
+        .edit-police-page .submit-tabs button{
+            height: 36px!important;
+        }
+        .police-related > div{
+            height: 225px!important;
+            position: relative;
+            top: 5px;
+        }
+        // 列表样式
+        .currentpolice{
+            .k-grid-content{
+                height: 730px!important;
+            }
+            .k-widget{
+                height: 805px!important;
+            }
+        }
+        .mypolice{
+            .k-grid-content{
+                height: 635px!important;
+            }
+            .k-widget{
+                height: 705px!important;
+            }
+        }
+        .historypolice{
+            .k-grid{
+                height: 620px!important;
+            }
+            // .k-widget{
+            //     height: 620px!important;
+            // }
+        }
+        // 聊天页面
+        .chat-page .chat-page-content{
+            height: 780px!important;
+        }
+
+
+    }
+}

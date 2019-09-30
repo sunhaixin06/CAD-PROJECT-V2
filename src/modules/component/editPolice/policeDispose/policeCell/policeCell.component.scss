@@ -1,0 +1,158 @@
+.police-cell{
+    .police-dispose-center-top{
+        overflow: hidden;
+        margin-bottom: 17px;
+        .top-title{
+            float: left;
+            font-size: 20px;
+            color: #0A2A5E;
+        }
+        .top-combobox{
+            width: 110px;
+            height: 30px;
+            float: right;
+            border: 1px solid #CDD9E6;
+            border-radius: 2px;
+            margin-right: 12px;
+            .k-dropdown .k-dropdown-wrap{
+                background-color: transparent!important;
+                background-image: none!important;
+            }
+            .k-header{
+                height: 100%!important;
+                width: 100%!important;
+            }
+            .k-dropdown-wrap .k-input{
+                font-size: 16px!important;
+                color: #0A2A5E!important;
+            }
+            ::ng-deep .k-dropdown-wrap .k-input{
+                font-size: 16px!important;
+                color: #0A2A5E!important;
+            }
+        }
+        .top-input{
+            float: right;
+            width: 225px;
+            height: 30px;
+            border: 1px solid #CDD9E6;
+            border-radius: 2px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            span{
+                font-size: 20px;
+                cursor: pointer;
+            }
+            input{
+                width: 195px;
+                height: 26px;
+                border: none;
+                font-size: 18px;
+                color: #0A2A5E;
+                &::-webkit-input-placeholder{
+                    color: #76849D;
+                }
+            }
+        }
+    }
+    .police-dispose-center-content{
+        width: 100%;
+        max-height: 200px;
+        overflow-y: auto;
+        padding-left: 3px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        >div{
+            width: 31%;
+            height: 48px;
+            background: #F6FAFF;
+            // background-color: #e0ebfc;
+            border-radius: 2px;
+            margin: 0 0 13px 0;
+            position: relative;
+            padding: 4px 13px 0;
+            cursor: pointer;
+            &:nth-child(3n){
+                margin-right: 0;
+            }
+            // &:nth-last-child(1),&:nth-last-child(2),&:nth-last-child(3){
+            //     margin-bottom: 0;
+            // }
+            &:after{
+                content: '';
+                width: 3px;
+                height: 48px;
+                border-radius: 4px 0 0 4px;
+                position: absolute;
+                left: -3px;
+                top: 0;
+            }
+            &.red:after{
+                background-color: #FA5C6E;
+            }
+            &.green:after{
+                background-color: #4ECC73;
+            }
+            &.active{
+                // border: 1px solid #347BFE;
+                .radio-cirl{
+                    &.icon-right22{
+                        display: block;
+                    }
+                    &.icon-select-circle{
+                        display: none;
+                    }
+                }
+            }
+            &:hover h5{
+                color: #347BFE;;
+                text-decoration-line: underline;
+                text-decoration-color: #347BFE;
+            }
+            h5{
+                width: 100%;
+                padding-right: 18px;
+                font-size: 18px;
+                color: #0A2A5E;
+                margin: 0 0 2px 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            p{
+                width: 100%;
+                padding-right: 18px;
+                margin-bottom: 0;
+                font-size: 14px;
+                color: #7A8BA8;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .radio-cirl{
+                width: 18px;
+                height: 18px;
+                position: absolute;
+                right: 18px;
+                top: 15px;
+                font-size: 20px;
+                display: block;
+                &.icon-right22{
+                    display: none;
+                    color: #347BFE;
+                }
+                &.icon-select-circle{
+                    display: block;
+                    color: #C1CDDA;
+                }
+            }
+        }
+        &:after{
+            content: '';
+            width: 222px;
+            height: 15px;
+        }
+    }
+}

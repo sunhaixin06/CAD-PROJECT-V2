@@ -1,0 +1,81 @@
+.dropdown {
+    position: absolute;
+    // width: calc(10% - 3px);
+    // right: 15px;
+    // top: 27px;
+    width: 100%;
+    right: 0;
+    top: 0;
+}
+
+.btn-caret {
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    text-align: right;
+    cursor: pointer;
+    margin-top: 5px;
+    // border-left: 1px solid #ccc;
+    .caret {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        // margin-left: 0px;
+        margin: -3px 15px 0 0;
+        vertical-align: middle;
+        border-top: 6px dashed;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+    }
+}
+
+.btn-default {
+    color: #333;
+    background-color: #ebf3ff;
+    border: none;
+}
+
+.dropdown-menu {
+    width: 470px;
+    height: 300px;
+    padding: 0;
+    // left: -900%;
+    left: 0;
+    top: 34px;
+}
+
+.list-group-item {
+    width: 150px;
+    user-select: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #0A2A5E;
+}
+.pull-right{
+    font-size: 18px;
+    position: relative;
+    top: 5px;
+}
+
+.list-items {
+    // position: absolute;
+    display: inline-block;
+    width: 155px;
+    height: 100%;
+    padding: 0;
+    overflow-y: auto;
+    background: #fff;
+}
+
+.list-group-item-active {
+    color: #fff;
+    font-weight: bold;
+    background: linear-gradient(to right, #417FFD, #298EFE);
+}
+
+// .open>.dropdown-menu {
+//     display: none;
+// }
+.dropDownOpen>.dropdown-menu {
+    display: block;
+}

@@ -1,0 +1,154 @@
+.police-list-page{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    // .edit-police-page-bg{
+    //     position: absolute;
+    //     top: 20px;
+    //     left: 19px;
+    //     z-index: 1;
+    //     background: rgba(255,255,255,0.20);
+    //     border-radius: 16px;
+    // }
+    .edit-content{
+        position: relative;
+        z-index: 2;
+        background: #FDFEFF;
+        box-shadow: 0 4px 10px 0 rgba(178,193,212,0.10);
+        border-radius: 16px 0px 0px 16px 16px;
+        
+    }
+    .edit-content-top{
+        padding: 0 30px;
+        height: 582px;
+        position: relative;
+        margin-bottom: 11px;
+        .edit-content-tabs{
+            height: 81px;
+            background-color: rgba(236, 244, 255, .5);
+            border-radius: 40px 20px 0 0;
+            padding: 0 35px 0 36px;
+            position: relative;
+            z-index: 1;
+            .tabs-tips{
+                position: relative;
+                float: left;
+                padding-top: 15px;
+                user-select: none;
+                >div{
+                    float: left;
+                    font-size: 20px;
+                    color: #0A2A5E;
+                    padding-bottom: 5px;
+                    margin-right: 55px;
+                    position: relative;
+                    cursor: pointer;
+                    &:nth-child(2){
+                        position: relative;
+                        top: -1px;
+                    }
+                    &.active{
+                        font-weight: bold;
+                        // border-bottom: 4px solid #0A2A5E;
+                        span{
+                            // color: #0A2A5E;
+                        }
+                        &:after{
+                            content: '';
+                            width: 40px;
+                            height: 6px;
+                            background-color: #0A2A5E;
+                            border-radius: 2.5px;
+                            position: absolute;
+                            bottom: -2.8px;
+                            left: 20px;
+                        }
+                    }
+                    &:nth-child(1).active:after{
+                        left: 53px;
+                    }
+                    &:nth-child(2).active:after{
+                        left: 53px;
+                    }
+                    &:nth-child(3).active:after{
+                        left: 53px;
+                    }
+                    span{
+                        display: inline-flex;
+                        border-radius: 20px;
+                        width: 28px;
+                        height: 28px;
+                        justify-content: center;
+                        color: #fff;
+                        font-size: 20px;
+                        margin-right: 5px;
+                        &.icon-file-1{
+                            background-image: linear-gradient(-136deg, #737CFE 14%, #73C0FC 100%);
+                        }
+                        &.icon-file-1::before,&.icon-user-1::before,&.icon-file-history::before{
+                            align-self: center;
+                        }
+                        &.icon-user-1{
+                            background-image: linear-gradient(-134deg, #9C62F3 0%, #E474D6 100%);
+                        }
+                        &.icon-file-history{
+                            background-image: linear-gradient(-136deg, #4180FD 0%, #2493FF 100%);
+                        }
+                    }
+                }
+            }
+            .tabs-right{
+                height: 59px;
+                display: flex;
+                float: right;
+                align-items: center;
+                div{
+                    cursor: pointer;
+                }
+                .txt{
+                    padding: 0 8px;
+                    border: 1px solid #7A8BA8;
+                    border-radius: 16px;
+                    font-size: 20px;
+                    color: #5E6B82;
+                    margin-right: 12px;
+
+                    >input{
+                        margin: 0;
+                        padding: 0;
+                        height: 30px;
+                        width: 360px;
+                        border: none;
+                        background: none;
+                    }
+                }
+                .attachment{
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    border: 1px solid #7A8BA8;
+                    margin-right: 12px;
+                    font-size: 22px;
+                    line-height: 32px;
+                    text-align: center;
+                    span{
+
+                    }
+                }
+            }
+        }
+        .edit-content-top-box{
+            width: 100%;
+            // height: 910px;
+            // height: 523px;
+            // padding-top: 14px;
+            background: #FFFFFF;
+            box-shadow: 0 4px 10px 0 rgba(178,193,212,0.10);
+            border-radius: 16px;
+            position: relative;
+            top: -22px;
+            z-index: 2;
+            overflow: hidden;
+    }
+}
+}

@@ -1,0 +1,76 @@
+<div class="police-dispose-right-top">
+    <div>已选单位</div>
+    <p>已选4个对象</p>
+</div>
+<div class="police-dispose-right-content scrollbar">
+    <div class="item-child item3">
+        <p>浦东分局</p>
+        <div class="shade-box">
+            <span class="icon-calender-img"></span>
+            <span class="icon-call-img"></span>
+            <!-- <span class="icon-infor-img"></span> -->
+            <span class="icon-close-img"></span>
+        </div>
+    </div>
+    <div class="item-child item3">
+        <p>浦东分局</p>
+        <div class="shade-box">
+            <span class="icon-calender-img"></span>
+            <span class="icon-call-img"></span>
+            <!-- <span class="icon-infor-img"></span> -->
+            <span class="icon-close-img"></span>
+        </div>
+    </div>
+    <div class="item4 green">
+        <h5>处置单元1</h5>
+        <p>徐汇分局</p>
+        <div class="shade-box">
+            <span class="icon-calender-img"></span>
+            <span class="icon-call-img"></span>
+            <!-- <span class="icon-infor-img"></span> -->
+            <span class="icon-close-img"></span>
+        </div>
+    </div>
+    <div class="item4 red">
+        <h5>处置单元1</h5>
+        <p>徐汇分局</p>
+        <div class="shade-box">
+            <span class="icon-calender-img"></span>
+            <span class="icon-call-img"></span>
+            <!-- <span class="icon-infor-img"></span> -->
+            <span class="icon-close-img"></span>
+        </div>
+    </div>
+    <!-- [ngClass]="{ 'active': isAddTag }" -->
+    <div class="item-edit">
+        <!-- <input type="text"
+        [(ngModel)] = "tagValue"
+        placeholder="搜索并添加"
+        (keyup.enter)="addTag(false, 0)"
+        (blur)="addTag(false, 1)">
+        <ul class="item-edit-ul scrollbar">
+            <li>虹口分局</li>
+            <li>虹口交警支队</li>
+            <li>虹桥派出所</li>
+            <li>虹桥机场支队</li>
+            <li>虹口分局民警</li>
+        </ul> -->
+        <kendo-autocomplete
+            [data]="listItems"
+            [filterable]="true"
+            [suggest]="true"
+            [placeholder]="'搜索并添加'"
+            [popupSettings]="{
+                popupClass: 'item-edit-popup-class scrollbar'
+            }"
+            (valueChange)="valueChange($event)"
+            (filterChange)="filterChange($event)"
+            >
+            <ng-template kendoAutoCompleteItemTemplate let-dataItem>
+                <span style="color: #0A2A5E;font-size: 18px;height: 32px;line-height: 32px;">
+                    {{ dataItem }}
+                </span>
+            </ng-template>
+        </kendo-autocomplete>
+    </div>
+</div>

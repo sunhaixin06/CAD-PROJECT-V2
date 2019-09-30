@@ -1,0 +1,59 @@
+
+.header{
+	height: 40px;
+	background: #00a1fd;;
+	color: #ffffff;
+    font-family: "微软雅黑";
+	text-align: center;
+	padding-top: 3px;
+}
+.header h5{
+	background: #00a1fd;;
+	color: #ffffff;
+    font-family: "微软雅黑";
+	text-align: center;
+	font-size:16px
+}
+.header div{
+	cursor: pointer
+}
+.header div span{
+	cursor: pointer;float: right;margin-top: -30px;margin-right: 10px;
+}
+/* .main {
+	padding: 20px;
+	border-bottom: 2px solid #00A1FD;
+	border-left: 2px solid #00A1FD;
+	border-right: 2px solid #00A1FD;
+} */
+.main .group {
+	width: 100%;
+	margin-top: 15px;	
+	border-bottom: 1px dashed #007ACC;
+}
+.main .group label{
+	display: block;	
+	width: 80px;
+	height: 22px;
+	line-height: 22px;
+	font-size: 16px;
+	font-weight: 400;
+	text-align: center;
+	color: rgb(102, 102, 158);
+	border: 1px dashed rgb(151, 151, 151);
+}	
+
+.main .group .text_info {
+	margin-top: -3px;
+	position: relative;
+	font-size: 14px;
+	line-height: 20px;
+	padding-left: 22px;
+	border-left: 1px solid #007ACC;
+}
+
+.main .group .text_info .fa {
+	position: absolute;
+	top: 2px;
+	left: 1px;
+} 

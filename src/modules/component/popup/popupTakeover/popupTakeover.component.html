@@ -1,0 +1,30 @@
+<button kendoButton *ngIf="!openeds" (click)="open()">popupTakeover</button>
+<kendo-dialog *ngIf="openeds" (close)="close('cancel')" [height]="560" [width]="830">
+        <kendo-dialog-titlebar>
+            <div style="font-size: 18px; line-height: 1.3em;">
+                请求接管
+                <div class="txt">
+                    <span class="icon-search-1"></span>
+                    <input type="text" placeholder="搜索"/>
+                </div>
+            </div>
+        </kendo-dialog-titlebar>
+        <ul>
+            <li *ngFor="let product of Takelist">
+                <div class="overlist {{'overlist'+product.id}}" (click)="takelistSwitch(product.id)">
+                    <div id={{product.id}} class="takeoverlist">
+                        <img src={{product.img}} >
+                        <div class="title">{{product.text}}</div>
+                        <div class="detail">{{product.value}}</div>
+                        <div class="detail">{{product.value}}</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <kendo-dialog-actions>
+            <div>
+                <button kendoButton (click)="close('no')">取消</button>
+                <button kendoButton (click)="close('yes')" primary="true" class="closetrue">保存</button>
+            </div>
+        </kendo-dialog-actions>
+    </kendo-dialog>

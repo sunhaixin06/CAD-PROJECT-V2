@@ -1,0 +1,47 @@
+<div class="timeline-details">
+  <div class="main">
+    <div class="group">
+      <label>事件名称:</label>
+      <div class="text_info">
+        <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+        {{incident_name}}
+      </div>
+    </div>
+    <div class="group">
+      <label>操作时间:</label>
+      <div class="text_info">
+        <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+        {{datetime}}
+      </div>
+    </div>
+    <div class="group">
+      <label>操&nbsp;作&nbsp;人:</label>
+      <div class="text_info">
+        <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+        {{person}}
+      </div>
+    </div>
+    <div class="group">
+      <label>操作类型:</label>
+      <div class="text_info">
+        <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+        {{leixing}}
+      </div>
+    </div>
+    <div class="group">
+      <label>标&nbsp;&nbsp;&nbsp;题:</label>
+      <div class="text_info">
+        <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+        {{header}}
+      </div>
+    </div>
+    <div class="group" *ngIf="description!=''">
+      <label>详情:</label>
+      <div class="text_info">
+        <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+        {{description}}
+      </div>
+    </div>
+  </div>
+</div>
+

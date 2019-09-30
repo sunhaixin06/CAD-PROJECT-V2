@@ -1,0 +1,94 @@
+<div class="police-units scrollbar">
+    <div class="level-1">
+        <div class="level-top">
+            <div class="name">待选单位</div>
+            <div class="input">
+                <span class="icon-search-1"></span>
+                <input type="text" placeholder="英/汉">
+            </div>
+        </div>
+        <ul class="level-ul scrollbar">
+            <li [class.active]="item.isSelect" *ngFor="let item of policeData;let i = index">
+                <span class="radio-cirl icon-right22" (click)="selectCell(0, false, i)"></span>
+                <span class="radio-cirl icon-select-circle" (click)="selectCell(0, true, i)"></span>
+                <p class="word-ellipsis" title="{{item.name}}">{{item.name}}</p>
+                <i class="icon-arrowright" *ngIf="item.child.length > 0" (click)="expand(0, item.child)"></i>
+            </li>
+        </ul>
+    </div>
+    <div class="level-1" *ngIf="policeChildData[0].length > 0">
+        <div class="level-top-all" [class.active]="policeSelectAll[0] === true">
+            <span class="radio-cirl icon-right22" (click)="selectCellAll(0, false)"></span>
+            <span class="radio-cirl icon-select-circle" (click)="selectCellAll(0, true)"></span>
+            全选
+        </div>
+        <ul class="level-ul scrollbar">
+            <li [class.active]="item.isSelect" *ngFor="let item of policeChildData[0];let i = index">
+                <span class="radio-cirl icon-right22" (click)="selectCell(1, false, i)"></span>
+                <span class="radio-cirl icon-select-circle" (click)="selectCell(1, true, i)"></span>
+                <p class="word-ellipsis" title="{{item.name}}">{{item.name}}</p>
+                <i class="icon-arrowright" *ngIf="item.child.length > 0" (click)="expand(1, item.child)"></i>
+            </li>
+        </ul>
+    </div>
+    <div class="level-1" *ngIf="policeChildData[1].length > 0">
+        <div class="level-top-all" [class.active]="policeSelectAll[1] === true">
+            <span class="radio-cirl icon-right22" (click)="selectCellAll(1, false)"></span>
+            <span class="radio-cirl icon-select-circle" (click)="selectCellAll(1, true)"></span>
+            全选
+        </div>
+        <ul class="level-ul scrollbar">
+            <li [class.active]="item.isSelect" *ngFor="let item of policeChildData[1];let i = index">
+                <span class="radio-cirl icon-right22" (click)="selectCell(2, false, i)"></span>
+                <span class="radio-cirl icon-select-circle" (click)="selectCell(2, true, i)"></span>
+                <p class="word-ellipsis" title="{{item.name}}">{{item.name}}</p>
+                <i class="icon-arrowright" *ngIf="item.child.length > 0" (click)="expand(2, item.child)"></i>
+            </li>
+        </ul>
+    </div>
+    <div class="level-1" *ngIf="policeChildData[2].length > 0">
+        <div class="level-top-all" [class.active]="policeSelectAll[2] === true">
+            <span class="radio-cirl icon-right22" (click)="selectCellAll(2, false)"></span>
+            <span class="radio-cirl icon-select-circle" (click)="selectCellAll(2, true)"></span>
+            全选
+        </div>
+        <ul class="level-ul scrollbar">
+            <li [class.active]="item.isSelect" *ngFor="let item of policeChildData[2];let i = index">
+                <span class="radio-cirl icon-right22" (click)="selectCell(3, false, i)"></span>
+                <span class="radio-cirl icon-select-circle" (click)="selectCell(3, true, i)"></span>
+                <p class="word-ellipsis" title="{{item.name}}">{{item.name}}</p>
+                <i class="icon-arrowright" *ngIf="item.child.length > 0" (click)="expand(3, item.child)"></i>
+            </li>
+        </ul>
+    </div>
+    <div class="level-1" *ngIf="policeChildData[3].length > 0">
+        <div class="level-top-all" [class.active]="policeSelectAll[3] === true">
+            <span class="radio-cirl icon-right22" (click)="selectCellAll(3, false)"></span>
+            <span class="radio-cirl icon-select-circle" (click)="selectCellAll(3, true)"></span>
+            全选
+        </div>
+        <ul class="level-ul scrollbar">
+            <li [class.active]="item.isSelect" *ngFor="let item of policeChildData[3];let i = index">
+                <span class="radio-cirl icon-right22" (click)="selectCell(4, false, i)"></span>
+                <span class="radio-cirl icon-select-circle" (click)="selectCell(4, true, i)"></span>
+                <p class="word-ellipsis" title="{{item.name}}">{{item.name}}</p>
+                <i class="icon-arrowright" *ngIf="item.child.length > 0" (click)="expand(4, item.child)"></i>
+            </li>
+        </ul>
+    </div>
+    <div class="level-1" *ngIf="policeChildData[4].length > 0">
+        <div class="level-top-all" [class.active]="policeSelectAll[4] === true">
+            <span class="radio-cirl icon-right22" (click)="selectCellAll(4, false)"></span>
+            <span class="radio-cirl icon-select-circle" (click)="selectCellAll(4, true)"></span>
+            全选
+        </div>
+        <ul class="level-ul scrollbar">
+            <li [class.active]="item.isSelect" *ngFor="let item of policeChildData[4];let i = index">
+                <span class="radio-cirl icon-right22" (click)="selectCell(5, false, i)"></span>
+                <span class="radio-cirl icon-select-circle" (click)="selectCell(5, true, i)"></span>
+                <p class="word-ellipsis" title="{{item.name}}">{{item.name}}</p>
+                <i class="icon-arrowright" *ngIf="item.child.length > 0" (click)="expand(5, item.child)"></i>
+            </li>
+        </ul>
+    </div>
+</div>

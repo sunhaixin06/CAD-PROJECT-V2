@@ -1,0 +1,34 @@
+<button kendoButton (click)="open()">popupBlacklist</button>
+<kendo-dialog *ngIf="openeds" (close)="close('cancel')" [height]="560" [width]="830">
+    <kendo-dialog-titlebar>
+        <div class="tabs-tips">
+            <div [ngClass]="{ 'active': bottomBtnIndex === 0 }" (click)="switchBottomTab(0)">黑名单</div>
+            <div [ngClass]="{ 'active': bottomBtnIndex === 1 }" (click)="switchBottomTab(1)">红名单</div>
+        </div>
+        <div class="txt">
+            <span class="icon-search-1"></span>
+            <input type="text" placeholder="搜索"/>
+        </div>
+    </kendo-dialog-titlebar>
+    <div class="edit-content-bottom-box">
+        <!-- 警情处置 -->
+        <div *ngIf="bottomBtnIndex === 0">
+            <ul>
+                <li>限制呼入号码</li>
+                <li>申请人</li>
+                <li>申请时间</li>
+                <li>截止时间</li>
+                <li>截止日期</li>
+                <li>当前状态</li>
+
+            </ul>
+        </div>
+        <div *ngIf="bottomBtnIndex === 1">2</div>
+    </div>
+    <kendo-dialog-actions>
+        <div>
+            <button kendoButton (click)="close('no')">取消</button>
+            <button kendoButton (click)="close('yes')" primary="true" class="closetrue">保存</button>
+        </div>
+    </kendo-dialog-actions>
+</kendo-dialog>

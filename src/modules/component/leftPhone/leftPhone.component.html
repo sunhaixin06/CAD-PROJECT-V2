@@ -1,0 +1,62 @@
+<div class="left-phone">
+    <div class="left-phone-top"><img src="../../../resources/images/left-logo.png" alt="">公安局</div>
+    <div class="left-phone-address">
+        <p class="word-ellipsis">黄浦区长江路154号</p>
+        <!-- <span class="icon-map-location－1">
+            <span class="path1"></span><span class="path2"></span>
+        </span> -->
+        <span class="k-icon k-i-marker-pin"></span>
+        <!-- Unicode: e702 -->
+        <!-- <span class="icon-qingwu-3"></span> -->
+    </div>
+    <div class="left-phone-call">
+        <div class="now-time"><img src="../../../resources/images/left-call-icon-2.svg" alt=""> 12:24:09</div>
+        <div class="during-time"><img src="../../../resources/images/left-call-icon-1.svg" alt=""> 00'15'</div>
+        <img src="../../../resources/images/left-line.png" alt="" class="left-line">
+        <div class="{{ isHangUp ? 'phone-icon wave animate': 'phone-icon wave'}}"> <!-- animate -->
+            <div class="w1 center-child"></div>
+            <div class="w2 center-child"></div>
+            <div class="w3 center-child"></div>
+            <img src="../../../resources/images/left-call-1-1.png" alt="" class="center-child">
+            <!-- 挂断状态 -->
+            <div class="center-child phone-icon-shut">
+                <img src="../../../resources/images/left-call-2-1.png" alt="" class="center-child">
+            </div>
+        </div>
+        <div class="tips-popup" (click)="switchPhoneState()">
+            <div class="word-ellipsis left-posi"><span></span><p>疑似骚扰</p></div>
+            <div class="word-ellipsis left-posi"><span></span><p>前科人员</p></div>
+            <div class="word-ellipsis right-posi"><span></span><p>疑似骚扰1</p></div>
+            <div class="word-ellipsis lerightft-posi"><span></span><p>前科人员2</p></div>
+        </div>
+        <div class="tips-word">某某局长，你好，你有什么事情？</div>
+        <div class="name">黄仁武</div>
+        <div class="number">18293812774</div>
+    </div>
+    <div class="info">
+        <!-- 类名：active1、active2、active3、active4 -->
+        <div class="{{'tabs active'+selectIndex}}">
+            <div (click)="switchTab(1)">
+                <span>8</span>
+                <p>呼入次数</p>
+            </div>
+            <div (click)="switchTab(2)">
+                <span>6</span>
+                <p>历史报警</p>
+            </div>
+            <div (click)="switchTab(3)">
+                <span>1</span>
+                <p>骚扰次数</p>
+            </div>
+            <div (click)="switchTab(4)">
+                <span class="icon-file-history"></span>
+                <p>情报信息</p>
+            </div>
+            <img src="../../../resources/images/left-number-hover.png" alt="" class="slelected-border">
+        </div>
+        <!-- 历史报警 -->
+        <history-warn *ngIf="selectIndex === 1 || selectIndex === 2"></history-warn>
+        <!-- 情报信息 -->
+        <secret-info *ngIf="selectIndex === 3 || selectIndex === 4"></secret-info>
+    </div>
+</div>

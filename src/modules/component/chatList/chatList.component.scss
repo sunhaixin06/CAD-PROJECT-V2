@@ -1,0 +1,164 @@
+.chat-list{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .top-search{
+        width: 359px;
+        // height: 38px;
+        margin: 0 auto 8px;
+        padding-top: 18px;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        .top-search-input{
+            width: 310px;
+            height: 38px;
+            margin-right: 9px;
+            background: rgba(255,255,255,0.20);
+            border: 1px solid rgba(255,255,255,0.30);
+            border-radius: 4px;
+            overflow: hidden;
+            span{
+                color: #fff;
+                font-size: 20px;
+                margin: 10px 6px 0 10px;
+                cursor: pointer;
+            }
+            input{
+                width: 260px;
+                height: 100%;
+                color: #fff;
+                font-size: 18px;
+                background-color: transparent;
+                outline: none;
+                border: none;
+                &::-webkit-input-placeholder{
+                    color: rgba(255,255,255,0.80);
+                }
+            }
+        }
+        .top-search-btn{
+            width: 40px;
+            height: 38px;
+            background: rgba(255,255,255,0.20);
+            border: 1px solid rgba(255,255,255,0.30);
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            span{
+                color: #fff;
+                font-size: 22px;
+            }
+        }
+    }
+    .chat-list-tasks{
+        height: 810px;
+        overflow-y: auto;
+        li{
+            height: 90px;
+            padding: 10px 0 0 21px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            &:after{
+                content: '';
+                width: 380px;
+                height: 1px;
+                background-image: linear-gradient(to right, rgba(0,0,0,.2), rgba(0,0,0,.1));
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+            &.active, &:hover{
+                background-image: linear-gradient(-90deg, rgba(155,180,215,0.20) 0%, rgba(142,173,214,0.00) 100%);
+            }
+            &:hover{
+                .icon-link2{
+                    display: inline-block;
+                }
+            }
+            >span{
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                float: left;
+                margin-right: 11px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &.green{
+                    background-image: linear-gradient(-131deg, #27BB52 6%, #2AD15B 93%);
+                }
+                &.blue{
+                    background-image: linear-gradient(-136deg, #4180FD 0%, #2493FF 100%);
+                }
+                &.orange{
+                    background-image: linear-gradient(45deg, #FFB704 0%, #F7851C 100%);
+                }
+                span{
+                    display: inline-block;
+                }
+                &.duanxin span{
+                    width: 21px;
+                    height: 21px;
+                    background: url(../../../resources/images/unsave-duanxin.svg) no-repeat;
+                    background-size: 100% 100%;
+                }
+                &.dianhua span{
+                    width: 23px;
+                    height: 23px;
+                    background: url(../../../resources/images/unsave-dianhua.svg) no-repeat;
+                    background-size: 100% 100%;
+                }
+                &.jifang span{
+                    width: 21px;
+                    height: 24.5px;
+                    background: url(../../../resources/images/unsave-jifang.svg) no-repeat;
+                    background-size: 100% 100%;
+                }
+                &.weixin span{
+                    width: 25px;
+                    height: 25px;
+                    background: url(../../../resources/images/unsave-weixin.svg) no-repeat;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+        .history-warn-content{
+            width: 306px;
+            float: left;
+            div{
+                width: 306px;
+                font-size: 20px;
+                color: #FFFFFF;
+                display: flex;
+                justify-content: space-between;
+                span:nth-child(2){
+                    font-size: 18px;
+                }
+            }
+            p{
+                font-size: 14px;
+                color: rgba(255,255,255,.6);
+                display: flex;
+                justify-content: space-between;
+                span{
+                    display: inline-block;
+                    &:nth-child(1){
+                        width: 246px;
+                    }
+                }
+                .count-tips{
+                    background-image: linear-gradient(35deg, #FF859A 0%, #F84F61 99%);
+                    border-radius: 10px;
+                    padding: 0 10px;
+                    font-size: 16px;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<div class="police-dispose">
+    <div class="police-dispose-left">
+        <div *ngFor="let item of tabs;let i = index" [ngClass]="{ 'active': tabsIndex === i }" (click)="switchTabs(i)">{{item}}</div>
+    </div>
+    <div class="police-dispose-center">
+        <!-- 处警单位 -->
+        <police-units *ngIf="tabsIndex === 2"></police-units>
+        <!-- 处警单元 -->
+        <police-cell *ngIf="tabsIndex !== 2"></police-cell>
+    </div>
+    <div class="police-dispose-right">
+        <!-- 已选单位 -->
+        <selected-units></selected-units>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="police-list-page">
+    <div class="edit-content-top">
+        <div class="edit-content-tabs">
+            <div class="tabs-tips">
+                <div [ngClass]="{ 'active': selectIndex === 0 }" (click)="switchSelect(0)"><span
+                        class="icon-file-1"></span>当前警情</div>
+                <div [ngClass]="{ 'active': selectIndex === 1 }" (click)="switchSelect(1)"><span
+                        class="icon-user-1"></span>我的警情</div>
+                <div [ngClass]="{ 'active': selectIndex === 2 }" (click)="switchSelect(2)"><span
+                        class="icon-file-history"></span>历史警情</div>
+                <!-- <div [ngClass]="{ 'active': selectIndex === 3 }" (click)="switchSelect(3)"><span
+                        class="icon-treatment"></span>医疗警</div> -->
+            </div>
+            <div class="tabs-right">
+                <div class="txt">
+                    <span class="icon-search-1" (click)="doSearch()"></span>
+                    <input type="text" placeholder="搜索" [(ngModel)]="searchStr" />
+                </div>
+                <div class="attachment" (click)="clear()"><span class="icon-refresh2"></span></div>
+            </div>
+        </div>
+        <div class="edit-content-top-box"
+        [class.currentpolice]="selectIndex === 0"
+        [class.mypolice]="selectIndex === 1"
+        [class.historypolice]="selectIndex === 2"
+        >
+            <dqjq *ngIf="selectIndex === 0" [dataSource]="gridData" [gHeight]="gHeight"></dqjq>
+            <wdjq *ngIf="selectIndex === 1" [dataSource]="gridData" [gHeight]="gHeight"></wdjq>
+            <lsjq *ngIf="selectIndex === 2" [dataSource]="gridData" [gHeight]="gHeight"></lsjq>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,125 @@
+<div class="dqjq">
+        <kendo-grid *ngIf="selectIndex !== 2" [height]="gHeight"
+        [kendoGridBinding]="dataSource" 
+        [skip]="skip"
+        filterable="menu" 
+        [sortable]="{
+                allowUnsort: true,
+                mode: 'multiple'
+            }" 
+        [sort]="sort" 
+        [pageSize]="dataSource.length"
+        (dblclick)="dblClickEvent($event)"
+        (cellClick)="onCellClick($event)"
+        (sortChange)="sortChange($event)" 
+        [scrollable]="scrollable"
+        (scrollBottom)="loadMore()"
+        selectable="true"
+        [filter]="filter" 
+        [rowClass]="rowCallback">
+        
+        <kendo-grid-column field="zt" title="状态" width="150" [filterable]="true" [sortable]="true">
+            <!-- <ng-template kendoGridCellTemplate let-dataItem="dataItem"> -->
+            <!-- <div [innerHTML]="dataItem.log_date | safehtml"></div> -->
+            <!-- </ng-template> -->
+            <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+                <ng-container *ngIf="dataItem.zt === '已反馈'">
+                    <div class="jqzt grey">
+                        {{dataItem.zt}}
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="dataItem.zt === '已到达'">
+                    <div class="jqzt blue">
+                        {{dataItem.zt}}
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="dataItem.zt === '已接收'">
+                    <div class="jqzt green">
+                        {{dataItem.zt}}
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="dataItem.zt === '已处警'">
+                    <div class="jqzt red">
+                        {{dataItem.zt}}
+                    </div>
+                </ng-container>
+            </ng-template>
+            <ng-template kendoGridFilterMenuTemplate let-column="column" let-filter="filter"
+                let-filterService="filterService">
+                <multicheck-filter [isPrimitive]="true" [field]="column.field" [filterService]="filterService"
+                    [currentFilter]="filter" [data]="distinctPrimitive(column.field)"></multicheck-filter>
+            </ng-template>
+        </kendo-grid-column>
+        <!-- <kendo-grid-column field="hrsj" title="呼入时间" [filterable]="true" [sortable]="true">
+        </kendo-grid-column> -->
+        <kendo-grid-column field="hrsj" format="{0:d}" title="呼入时间" width="170">
+            <!-- <ng-template kendoGridFilterMenuTemplate let-filter let-column="column"
+                let-filterService="filterService">
+                <date-range-filter [field]="column.field" [filter]="filter" [filterService]="filterService">
+                </date-range-filter>
+            </ng-template>  -->
+            <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+                <kendo-grid-date-filter-cell
+                    [showOperators]="false"
+                    [column]="column"
+                    [filter]="filter">
+                </kendo-grid-date-filter-cell>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="dz" title="地址" width="460" [filterable]="false" [sortable]="false">
+        </kendo-grid-column>
+        <kendo-grid-column field="ajlx" title="案件类型" width="140" [sortable]="false" [filterable]="true">
+            <ng-template kendoGridFilterMenuTemplate let-column="column" let-filter="filter"
+                let-filterService="filterService">
+                <multicheck-filter [isPrimitive]="true" [field]="column.field" [filterService]="filterService"
+                    [currentFilter]="filter" [data]="distinctPrimitive(column.field)"></multicheck-filter>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="jjybh" title="接警员" [filterable]="false" [sortable]="false">
+        </kendo-grid-column>
+        <kendo-grid-column field="dj" title="等级" width="130" [filterable]="true" [sortable]="true">
+            <ng-template kendoGridFilterMenuTemplate let-column="column" let-filter="filter"
+                let-filterService="filterService">
+                <multicheck-filter [isPrimitive]="true" [field]="column.field" [filterService]="filterService"
+                    [currentFilter]="filter" [data]="distinctPrimitive(column.field)"></multicheck-filter>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="jz" title="警种" width="100" [sortable]="false" [filterable]="true">
+            <ng-template kendoGridFilterMenuTemplate let-column="column" let-filter="filter"
+                let-filterService="filterService">
+                <multicheck-filter [isPrimitive]="true" [field]="column.field" [filterService]="filterService"
+                    [currentFilter]="filter" [data]="distinctPrimitive(column.field)"></multicheck-filter>
+            </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="bjfs" title="报警方式" width="140" [sortable]="false" [filterable]="true">
+            <ng-template kendoGridFilterMenuTemplate let-column="column" let-filter="filter"
+                let-filterService="filterService">
+                <multicheck-filter [isPrimitive]="true" [field]="column.field" [filterService]="filterService"
+                    [currentFilter]="filter" [data]="distinctPrimitive(column.field)"></multicheck-filter>
+            </ng-template>
+            <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+                <div class="last-cell-box">
+                    <span>{{dataItem.bjfs}}</span>
+                    <span class="{{'love-level love-level-' + dataItem.ReorderLevel}}"></span>
+                </div>
+                <!-- <button (click)="onClickHandle(dataItem)" class="k-button">Custom action</button> -->
+            </ng-template>
+        </kendo-grid-column>
+        <ng-template kendoGridDetailTemplate let-dataItem>
+            <div *ngIf="dataItem.Category" class="wrap">
+                <div class="left">
+                    <span><label>报警电话:</label>{{dataItem.Category?.bjdh}}<a href="javascript:;"
+                            class="btn-call icon-call"></a></span>
+                    <span><label>管辖单位:</label>{{dataItem.Category?.gxdw}}</span>
+                    <span><label>处理结果:</label>{{dataItem.Category?.cjjg}}</span>
+                </div>
+                <div class="right">
+                    <span class="icon icon-visible"[routerLink]="['/policeDetail', dataItem.Category?.bjdh]" title="详情"></span>
+                    <span class="icon icon-file-copy" title="再处警"></span>
+                    <span class="icon icon-tape-1" title="录音"></span>
+                    <span class="icon icon-phone-4" title="打印"></span>
+                </div>
+            </div>
+        </ng-template>
+    </kendo-grid>
+</div>

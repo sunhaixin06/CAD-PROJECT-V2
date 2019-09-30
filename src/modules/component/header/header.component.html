@@ -1,0 +1,13 @@
+<div class="header-page">
+    <div class="page-name">
+        <div *ngIf="stayRoute === '/policeEdit'">报警 受理</div>
+        <div *ngIf="stayRoute === '/policeDetail'"><img src="../../../resources/images/icon-backup.svg" alt="">警情 详情</div>
+        <div *ngIf="stayRoute === '/policeList'">警情 列表</div>
+    </div>
+    <div class="page-tools">
+        <div class="header-icon" (click)="userDetail()">
+            <popup-Maillist class="tongxu"></popup-Maillist>
+            <img src="../../../resources/images/head/03.svg" alt="">
+        </div>
+    </div>
+</div>

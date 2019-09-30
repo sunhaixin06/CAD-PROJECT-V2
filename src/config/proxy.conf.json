@@ -1,0 +1,11 @@
+{
+    "/timelineQuery": {   
+     "target": "http://192.168.6.251:8080/ds-timeline-web/",   
+     "secure": false
+    },
+    "/basicDict": {   
+        "target": "http://192.168.6.251:8080/ds-timeline-web/",   
+        "secure": false
+    }
+}
+   

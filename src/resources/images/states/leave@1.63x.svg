@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/states/leave@1.63x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/states/leave" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval-Copy" stroke="#FFFFFF" stroke-width="1.5" fill="#FFA423" cx="6" cy="6" r="5.25"></circle>
+        <rect id="Rectangle-23-Copy" fill="#FFFFFF" transform="translate(7.500000, 6.000000) rotate(90.000000) translate(-7.500000, -6.000000) " x="6.75" y="3.75" width="1.5" height="4.5" rx="0.75"></rect>
+        <rect id="Rectangle-23-Copy-2" fill="#FFFFFF" x="5.25" y="2.25" width="1.5" height="4.5" rx="0.75"></rect>
+    </g>
+</svg>

@@ -1,0 +1,84 @@
+<button kendoButton *ngIf="!openeds" (click)="open()">popupFeedback</button>
+  <kendo-dialog title="警单反馈" *ngIf="openeds" (close)="close('cancel')" [height]="700" [width]="987">
+      <div class="opencenter">
+        <div class="openleft">
+            <div class="list">
+                <p>反馈人</p>
+                <input type="text">
+            </div>
+            <div class="list">
+                <p>反馈类型</p>
+                <kendo-dropdownlist [data]="listItems">
+                </kendo-dropdownlist>
+           </div>
+           <div class="list">
+                <p>反馈时间</p>
+                <kendo-datepicker [value]="value"></kendo-datepicker>
+           </div>
+           <div class="list">
+                <p>到达时间</p>
+                <kendo-datepicker [value]="value"></kendo-datepicker>
+           </div>
+           <div class="list">
+                <p>地址分类</p>
+                <kendo-dropdownlist [data]="listItems">
+                </kendo-dropdownlist>
+           </div>
+           <div class="comment">
+                <p>反馈内容<img src="../../../resources/images/right-input-text.png" alt=""></p>
+                <textarea name="police-content" id=""></textarea>
+           </div>
+           <div class="footer">
+                <p>出动车次</p>
+                <input type="text">
+            </div>
+            <div class="footer">
+                <p>出动人次</p>
+                <input type="text">
+            </div>
+            <div class="footer">
+                <p>救助人次</p>
+                <input type="text">
+            </div>
+            <div class="footer">
+                <p>抓获人数</p>
+                <input type="text">
+            </div>
+        </div>
+        <div class="operight">
+            <div class="list">
+                <p>来话类型<img src="../../../resources/images/right-input-text.png" alt=""></p>
+                <kendo-dropdownlist [data]="listItems">
+                </kendo-dropdownlist>
+            </div>
+            <div class="list">
+                <p>一级案由<img src="../../../resources/images/right-input-text.png" alt=""></p>
+                <kendo-dropdownlist [data]="listItems">
+                </kendo-dropdownlist>
+            </div>
+            <div class="list">
+                <p>二级案由<img src="../../../resources/images/right-input-text.png" alt=""></p>
+                <kendo-dropdownlist [data]="listItems">
+                </kendo-dropdownlist>
+            </div>
+            <div class="sec-item">
+                <p>警情级别</p>
+                <div class="{{'police-level active-'+policeLevel}}">
+                    <span></span>
+                    <ul>
+                        <li [ngClass]="{ 'active': policeLevel === 1 }" (click)="switchPoliceLevel(1)">1级</li>
+                        <li [ngClass]="{ 'active': policeLevel === 2 }" (click)="switchPoliceLevel(2)">2级</li>
+                        <li [ngClass]="{ 'active': policeLevel === 3 }" (click)="switchPoliceLevel(3)">3级</li>
+                        <li [ngClass]="{ 'active': policeLevel === 4 }" (click)="switchPoliceLevel(4)">4级</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+      <kendo-dialog-actions>
+        <div>
+            <button kendoButton (click)="close('no')">取消</button>
+            <button kendoButton (click)="close('yes')" primary="true" class="closetrue">保存</button>
+        </div>
+    </kendo-dialog-actions>
+  </kendo-dialog>

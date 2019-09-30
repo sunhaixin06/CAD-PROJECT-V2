@@ -1,0 +1,411 @@
+<div class="police-detail-page">
+  <div class="police-detail-page-bg"></div>
+  <div class="police-detail-page-content">
+    <div class="right-top-icon">
+      <img src="../../../resources/images/right-caseinfo-bg-1.svg" alt="">
+    </div>
+    <div class="police-detail-page-top">
+      <div class="police-detail-page-top-left">
+        <kendo-dropdownlist [data]="anjianData" [textField]="'text'" [valueField]="'value'" [value]="anjianValue"
+          (valueChange)="onChangeAnjian($event)">
+        </kendo-dropdownlist>
+      </div>
+      <div class="police-detail-page-top-right">
+        <div class="tabs-right">
+          <div class="attachment">
+            <img src="../../../resources/images/attachment.svg" alt="" class="tabs-img1">
+            <img src="../../../resources/images/attachment-hover.svg" alt="" class="tabs-img2">
+          </div>
+          <div class="tape2">
+            <img src="../../../resources/images/tape.svg" alt="" class="tabs-img1">
+            <img src="../../../resources/images/tape-hover.svg" alt="" class="tabs-img2">
+          </div>
+          <div class="help">
+            <img src="../../../resources/images/help2.svg" alt="" class="tabs-img1">
+            <img src="../../../resources/images/help.svg" alt="" class="tabs-img2">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="police-detail-page-title">
+      <div class="police-detail-page-title-box">
+
+
+        <!-- 报警人信息 -->
+        <div class="title-comp">
+          <span class="left"></span>
+          <span class="title">报警人信息</span>
+        </div>
+        <!-- 报警人信息列表 -->
+        <div class="helper-mes">
+          <div class="alarm">
+            <p>报警时间</p>
+            <div>
+              <p class="text">2019-07-19 16:40:20</p>
+            </div>
+          </div>
+          <div class="alarm">
+            <p>报警人</p>
+            <div>
+              <p class="text">王凯</p>
+              <img src="../../../resources/images/men-hover.svg" alt="">
+              <span class="icon-infor"></span>
+              <span class="icon-namecard"></span>
+            </div>
+          </div>
+          <div class="alarm">
+            <p>报警电话</p>
+            <div>
+              <p class="text">086-18203918192</p>
+              <img src="../../../resources/images/left-call-1-1.png" alt="">
+            </div>
+          </div>
+          <div class="alarm">
+            <p>联系人电话及姓名</p>
+            <div>
+              <p class="text"> 徐汇区大木桥路67号</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="police-detail-page-title-box">
+        <!-- 事件信息 -->
+        <div class="title-comp">
+          <span class="left"></span>
+          <span class="title">事件信息</span>
+        </div>
+        <!-- 事件信息列表 -->
+        <!-- 列表一层 -->
+        <div class="list1">
+          <div class="mes">
+            <p>事发地址</p>
+            <div class="text">
+              <p>徐汇区大木桥路67号</p>
+              <img src="../../../resources/images/location.svg" alt="">
+              <span class="icon-office"></span>
+            </div>
+          </div>
+          <div class="mes">
+            <p>报警内容</p>
+            <div class="text">
+              <p>发生抢劫事件，一名女士被抢包包，包中含重要文件</p>
+            </div>
+          </div>
+        </div>
+        <!-- 列表二层 -->
+        <div class="list2">
+          <div class="mes">
+            <p>所属分局</p>
+            <div class="text">
+              <p>黄浦分局</p>
+            </div>
+          </div>
+          <div class="mes">
+            <p>管辖单位</p>
+            <div class="text">
+              <p>人民路派出所</p>
+            </div>
+          </div>
+        </div>
+        <!-- 列表三层 -->
+        <div class="list3">
+          <div class="mes">
+            <p>来话类别</p>
+            <div class="text">
+              <p>报警求助举报投诉</p>
+            </div>
+          </div>
+          <div class="mes">
+            <p>警情级别</p>
+            <div class="text">
+              <p>2级</p>
+              <span class=""></span>
+            </div>
+          </div>
+        </div>
+        <!-- 列表四层 -->
+        <div class="list4">
+          <div class="mes">
+            <p>一级案由</p>
+            <div class="text">
+              <p>抢劫</p>
+            </div>
+          </div>
+          <div class="mes">
+            <p>二级案由</p>
+            <div class="text">
+              <p>抢劫</p>
+            </div>
+          </div>
+          <div class="mes">
+            <p>车牌号</p>
+            <div class="text">
+              <p>沪A029381</p>
+              <span class="icon-infor"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="police-detail-page-title-box minheight ">
+        <!-- 处置进度 -->
+        <div class="title-comp">
+          <span class="left"></span>
+          <span class="title">处置进度</span>
+          <!-- 处置流程 -->
+          <div class="process">
+            <ul [class.progress1]="activeIndex === 0" [class.progress2]="activeIndex === 1"
+              [class.progress3]="activeIndex === 2" [class.progress4]="activeIndex === 3"
+              [class.progress5]="activeIndex === 4">
+
+              <li>
+                <div class="hexagon">
+                  <div class="show">
+                  </div>
+                </div>
+                <div class="hexagon-text">
+                  已受理
+                </div>
+              </li>
+              <li>
+                <div class="hexagon">
+                  <div class="show">
+                  </div>
+                </div>
+                <div class="hexagon-text">
+                  处警中
+                </div>
+              </li>
+              <li>
+                <div class="hexagon">
+                  <div class="show">
+                  </div>
+                </div>
+                <div class="hexagon-text">
+                  已处警
+                </div>
+              </li>
+              <li>
+                <div class="hexagon">
+                  <div class="show">
+                  </div>
+                </div>
+                <div class="hexagon-text">
+                  已到场
+                </div>
+              </li>
+              <li>
+                <div class="hexagon">
+                  <div class="show">
+                  </div>
+                </div>
+                <div class="hexagon-text">
+                  已反馈
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <!-- 点击出现详情弹窗 -->
+        <div class="pop-ups" *ngIf="isShowTimeLine">
+          <div class="place">
+            徐汇分局
+          </div>
+          <ul>
+            <li>
+              <div class="occurrence-time">
+                <span> 12:13</span>
+                <div class="occurrence-bgimg1">
+                  代签收
+                </div>
+              </div>
+
+              <div class="occurrence-man">
+                <span>陈浩</span>
+              </div>
+            </li>
+            <li>
+              <div class="occurrence-time">
+                <span> 12:20</span>
+                <span>徐利明</span>
+              </div>
+              <div class="occurrence-bgimg2">
+                到场反馈
+              </div>
+              <div class="occurrence-man">
+                <span>民警赶到现场</span>
+              </div>
+              <span class="icon-arrowright" (click)="showLineDetail($event, true)"></span>
+            </li>
+            <li>
+              <div class="occurrence-time">
+                <span> 12:24</span>
+                <span>徐利明</span>
+              </div>
+              <div class="occurrence-bgimg3">
+                处置反馈
+              </div>
+              <div class="occurrence-man">
+                <span>民警已赶到现场，会尽快处理案件</span>
+              </div>
+              <div class="occurrence-icon">
+                <span></span>
+                <span></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- 点击li出现详情 -->
+        <div class="pop-ups-detail-list" *ngIf="isSHowLineDetail">
+          <!-- 详情盒子 -->
+          <div class="pop-ups-detail-item">
+            <p>首次报警时间：19-01-29 12:89</p>
+            <div>
+              <dl>
+                <dt>反馈单编号</dt>
+                <dd>1920392839938193</dd>
+              </dl>
+              <dl>
+                <dt>出警人</dt>
+                <dd>徐利明</dd>
+              </dl>
+            </div>
+            <div>
+              <dl>
+                <dt>出警时间</dt>
+                <dd>2019-07-19 16:40:20</dd>
+              </dl>
+              <dl>
+                <dt>到场时间</dt>
+                <dd>2019-07-19 16:40:20</dd>
+              </dl>
+            </div>
+            <div>
+              <dl>
+                <dt>反馈情况</dt>
+                <dd>民警赶到现场</dd>
+              </dl>
+            </div>
+          </div>
+          <!-- 详情盒子 -->
+
+        </div>
+
+        <!-- 处置列表 -->
+        <div class="management-list scrollbar">
+          <!-- 处置信息盒子 -->
+          <div class="management-item" *ngFor="let item of listDs; index as i;">
+            <!-- 处置标题 -->
+            <div class="item-title">
+              <div class="finish" (click)="itemClick(i)"
+              [class.finish1]="item.isShrink"
+              >
+                <span class="icon-history2"></span>
+                <span>{{item.titleTime}} {{item.titleStatus}}</span>
+              </div>
+              <div class="item-title-content">
+                <p>{{item.titleText}}</p>
+                <img src="../../../resources/images/tape.svg" alt="" class="tabs-img1">
+                <!-- <img src="../../../resources/images/tape-hover.svg" alt="" class="tabs-img2"> -->
+              </div>
+            </div>
+            <!-- 信息列表 -->
+            <div class="item-card-list" *ngIf="item.isShrink">
+              <!-- 信息卡片 -->
+              <div class="item-card" *ngFor="let card of item.itemCardList">
+                <div class="item-card-title">
+                  <div class="time">
+                    <span class="icon-history2"></span>
+                    <span>{{card.itemTime}}</span>
+                  </div>
+                  <div class="to-feedback" 
+                  [class.tf1]="card.status === 0"
+                  [class.tf2]="card.status === 1"
+                  [class.tf3]="card.status === 2">
+                    {{card.itemStatus}}
+                  </div>
+                </div>
+                <div class="item-card-content">
+                  <div class="item-card-content1">
+                    <div>
+                      <span class="icon-office-1"></span>
+                      <span> {{card.itemPlace}}</span>
+                    </div>
+                    <div>
+                      <span class="icon-addpeople-1"></span>
+                      <span> {{card.itemMan}}</span>
+                    </div>
+                  </div>
+                  <div class="item-card-content2">
+                    <span class="icon-file-1"></span>
+                    <span> {{card.itemShijian}}</span>
+                  </div>
+                </div>
+                <!-- 遮罩层 -->
+                <div class="mask">
+                  <p class="mask-left">
+                    <span class="icon-history2"></span>
+                  </p>
+                  <p class="mask-right">
+                    <span class="icon-edit2"></span>
+                    <span class="icon-file-copy"></span>
+                  </p>
+                  <div class="btns">
+                    <button class="btns-active" (click)="showTimeLine($event, true)">查看详情</button>
+                    <button>查看历史</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 按钮 -->
+    <div class="btn-bottom">
+      <div class="submit-tabs">
+        <div>
+          <button class="btn-common">警情补充</button>
+          <button class="btn-common">警情关闭</button>
+          <button class="btn-common save" (click)="showJingqing()">再处警</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 警情处置 -->
+  <div class="edit-content-bottom" *ngIf="isShowJingqing">
+      <div class="edit-content-tabs">
+          <div class="tabs-tips">
+              <div [ngClass]="{ 'active': bottomBtnIndex === 0 }" (click)="switchBottomTab(0)">警情处置</div>
+              <div [ngClass]="{ 'active': bottomBtnIndex === 1 }" (click)="switchBottomTab(1)">关联警情</div>
+              <div [ngClass]="{ 'active': bottomBtnIndex === 2 }" (click)="switchBottomTab(2)">程序化处警</div>
+          </div>
+          <div class="tabs-right">
+              <div>
+                  <span class="icon-search-1"></span>
+                  <input type="text" placeholder="搜索">
+              </div>
+              <span class="icon-tape2-dingyi-reset">
+                  <img src="../../../resources/images/tape.svg" alt="" class="tabs-img1">
+                  <img src="../../../resources/images/tape-hover.svg" alt="" class="tabs-img2">
+              </span>
+          </div>
+      </div>
+      <div class="edit-content-bottom-box">
+          <!-- 警情处置 -->
+          <police-dispose *ngIf="bottomBtnIndex === 0"></police-dispose>
+          <!-- 关联警情 -->
+          <police-related *ngIf="bottomBtnIndex === 1"></police-related>
+          <!-- 程序化处警 -->
+          <police-rule *ngIf="bottomBtnIndex === 2"></police-rule>
+      </div>
+  </div>
+</div>

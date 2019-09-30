@@ -1,0 +1,53 @@
+<div class="left-user">
+    <div class="left-phone-top"><img src="../../../resources/images/left-logo.png" alt="">公安局</div>
+    <div class="header-part">
+        <div class="header-icon">
+            <img src="../../../resources/images/head/06.svg" alt="">
+        </div>
+        <div class="header-info">
+            <p>陈丽娜</p>
+            <div>
+                <span>工号: 1405</span>
+                <span>坐席: 12</span>
+            </div>
+        </div>
+    </div>
+    <div class="police-info">
+        <div class="police-info-top">
+            <div>
+                <div>425<span>起</span></div>
+                <p>当天接警</p>
+            </div>
+            <div>
+                <div>5<span>起</span></div>
+                <p>当天违规</p>
+            </div>
+        </div>
+        <div class="police-info-bottom">
+            <div>00'15'</div>
+            <p (click)="testTab()">个人平均接警时长</p>
+        </div>
+    </div>
+    <div class="tabs-box">
+        <!-- tab为3个页签时 -->
+        <div class="{{'tabs active3 active3-'+ selectIndex}}" *ngIf="tabsArr.length === 3">
+            <div (click)="switchTab(i+1)" *ngFor="let item of tabsArr;let i = index">
+                <span>{{item.value}}</span>
+                <p>{{item.name}}</p>
+            </div>
+            <img src="../../../resources/images/left-number-hover.png" alt="" class="slelected-border">
+        </div>
+        <!-- tab为4个页签时 -->
+        <div class="{{'tabs active4 active4-'+ selectIndex}}" *ngIf="tabsArr.length === 4">
+            <div (click)="switchTab(i+1)" *ngFor="let item of tabsArr;let i = index">
+                <span>{{item.value}}</span>
+                <p>{{item.name}}</p>
+            </div>
+            <img src="../../../resources/images/left-number-hover.png" alt="" class="slelected-border">
+        </div>
+    </div>
+    <!-- 未保存 -->
+    <un-save *ngIf="selectIndex === 1 || selectIndex === 3"></un-save>
+    <!-- 排队列表 -->
+    <queue-list *ngIf="selectIndex === 2"></queue-list>
+</div>

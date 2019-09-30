@@ -1,0 +1,87 @@
+.fujian-title{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.timeline-fujian {
+	height: 300px;
+}
+
+.timeline-fujian .header{
+	height: 40px;
+	background: #00a1fd;;
+	color: #ffffff;
+    font-family: "微软雅黑";
+	text-align: center;
+	padding-top: 3px;
+}
+
+.xxx{
+	cursor: pointer;
+	float: right;
+	margin-top: -30px;
+	margin-right: 10px;
+}
+
+.header h5{
+	background: #00a1fd;;
+	color: #ffffff;
+    font-family: "微软雅黑";
+	text-align: center;
+	font-size:16px
+}
+
+.timeline-fujian .main{
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+    overflow-x:hidden;
+	overflow-y:auto;
+}
+.timeline-fujian .main::-webkit-scrollbar-track{
+   
+}/* 滚动条的滑轨背景颜色 */
+
+.timeline-fujian .main::-webkit-scrollbar{
+	z-index: 999999;
+	border-radius:12px;
+	filter:alpha(opacity=50); /*IE滤镜，透明度50%*/
+	-moz-opacity:0.5; /*Firefox私有，透明度50%*/
+	opacity:0.5;/*其他，透明度50%*/
+	width: 5px;
+} 
+.timeline-fujian .main::-webkit-scrollbar-thumb{
+	border-radius:30px;
+	background-color:#eaf8ff
+}/* 滑块颜色 */
+
+table{
+	width: calc(100% - 30px);
+	margin: 0px 15px 10px 15px
+}
+table .table-header{
+	text-align: center;
+	border-bottom: 2px double #00A1FD;
+	height: 40px;
+}
+table .table-main{
+	text-align: center;
+	border-bottom: 1px solid #00A1FD;
+	height: 40px;
+}
+table tr .line1{
+	width: 50%;
+	text-align: center;
+}
+table tr .line2{
+	width: 30%;
+	text-align: center;
+}
+table tr .line3{
+	width: 20%;
+	text-align: center;
+}
+

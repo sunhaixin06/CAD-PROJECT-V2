@@ -1,0 +1,35 @@
+<div class="monitor" >
+	<div class="system" *ngFor="let system of gridData"  style="border: 1px #00A1FD solid;width: 500px;height: 297px;margin:20px;float:left;">
+		<div class="header" style="height: 30px;background: #00A1FD;color: white;text-align: center; padding-top: 5px;">
+			{{system.systemName}}
+		</div>
+		<div class="main" style="width: 100%;height: 267px;">
+			<kendo-grid [kendoGridBinding]="system.systemIps" [height]="266" [pageSize]="5" [pageable]="true" >
+				<kendo-grid-column field="rowNum" title="序号" width="11%" filterable="false"></kendo-grid-column>
+				<kendo-grid-column field="status" title="状态" width="11%" filterable="false">
+					<ng-template kendoGridCellTemplate let-dataItem="dataItem">
+						<div *ngIf="dataItem.status == 0" style="width:20px;height:20px;background:red;border-radius:10px;margin-left:15%"></div>
+						<div *ngIf="dataItem.status == 1" style="width:20px;height:20px;background:green;border-radius:10px;margin-left:15%"></div>
+					</ng-template>
+				</kendo-grid-column>
+				<kendo-grid-column field="systemIp" title="IP" width="42%" filter="date"></kendo-grid-column>
+				<kendo-grid-column title="系统日志" width="18%">
+					<ng-template kendoGridCellTemplate let-dataItem="dataItem">
+						<a routerLink="systemloggrid" [queryParams]="{systemName:system.systemName,systemIp:dataItem.systemIp}" >进入</a>
+					</ng-template>
+				</kendo-grid-column>
+				<kendo-grid-column title="业务日志" width="18%" filter="numeric">
+					<ng-template kendoGridCellTemplate let-dataItem="dataItem">
+						<a routerLink="businessloggrid" [queryParams]="{systemName:system.systemName,systemIp:dataItem.systemIp}" >进入</a>
+					</ng-template>
+				</kendo-grid-column>
+				<kendo-grid-messages pagerOf="共" pagerItems="条"></kendo-grid-messages>
+			</kendo-grid>
+		</div>
+	</div>
+	<!-- <router-outlet></router-outlet> -->
+</div>
+
+
+
+
